@@ -180,11 +180,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\MonoGameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
+      "projectUniqueName": "F:\\MonogameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
       "projectName": "OurborosVandaleria.Desktop",
-      "projectPath": "F:\\MonoGameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
+      "projectPath": "F:\\MonogameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
       "packagesPath": "C:\\Users\\Eben\\.nuget\\packages\\",
-      "outputPath": "F:\\MonoGameProjects\\OurborosVandaleria.Desktop\\obj\\",
+      "outputPath": "F:\\MonogameProjects\\OurborosVandaleria.Desktop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -240,7 +240,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
