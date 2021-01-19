@@ -23,10 +23,12 @@ namespace OuroborosVandaleria
             base.Initialize();
         }
 
+        Texture2D myTexture;
+        Vector2 spritePosition = Vector2.Zero;
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            myTexture = Content.Load<Texture2D>("Village/farmingVillageMap");
             // TODO: use this.Content to load your game content here
         }
 
@@ -45,7 +47,9 @@ namespace OuroborosVandaleria
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            _spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
+            _spriteBatch.Draw(myTexture, spritePosition, Color.White);
+            _spriteBatch.End();
             base.Draw(gameTime);
         }
     }

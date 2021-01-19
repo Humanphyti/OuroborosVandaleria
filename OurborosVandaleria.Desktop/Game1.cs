@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using OuroborosVandaleria.
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -23,10 +24,14 @@ namespace OurborosVandaleria.Desktop
             base.Initialize();
         }
 
+        Texture2D myTexture;
+        Vector2 spritePosition = Vector2.Zero;
+        //Vector2 spriteSpeed = new Vector2(50.0f, 50.0f);
         protected override void LoadContent()
         {
+            
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            myTexture = Content.Load<Texture2D>("Village/farmingVillageMap");
             // TODO: use this.Content to load your game content here
         }
 
@@ -45,7 +50,9 @@ namespace OurborosVandaleria.Desktop
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            _spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
+            _spriteBatch.Draw(myTexture, spritePosition, Color.White);
+            _spriteBatch.End();
             base.Draw(gameTime);
         }
     }
