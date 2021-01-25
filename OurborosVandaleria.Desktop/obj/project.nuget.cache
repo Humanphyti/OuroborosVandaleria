@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "WJpnctoZlJ+Vf77Sb4+Jx4QRVpMg5IA54RWn3/r/8URcJwAZUTOB56BCGhk9jakn6gq0V06d+37rViZfv5s6wQ==",
+  "dgSpecHash": "AZa0Yh68UBquCCyG0VoDcadJW6rpWGnJVto+mb/BzJaTsBpG5JXHaYBJ0TGig9vyF+1GpzE/3hPMYe7TzEwfRA==",
   "success": true,
-  "projectFilePath": "F:\\MonogameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
+  "projectFilePath": "E:\\MonogameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Eben\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1641\\monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
-    "C:\\Users\\Eben\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512"
+    "C:\\Users\\Eben Schumann\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1641\\monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
+    "C:\\Users\\Eben Schumann\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512"
   ],
   "logs": []
 }
