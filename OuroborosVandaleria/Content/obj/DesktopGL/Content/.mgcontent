@@ -4,7 +4,7 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>F:/MonogameProjects/OuroborosVandaleria/Content/Village/farmingVillageMap.png</File>
+    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/Village/farmingVillageMap.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

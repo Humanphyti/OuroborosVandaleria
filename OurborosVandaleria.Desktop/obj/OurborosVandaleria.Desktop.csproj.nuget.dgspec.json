@@ -1,20 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "E:\\MonogameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj": {}
+    "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj": {}
   },
   "projects": {
-    "E:\\MonogameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj": {
+    "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\MonogameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
+        "projectUniqueName": "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
         "projectName": "OurborosVandaleria.Desktop",
-        "projectPath": "E:\\MonogameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
+        "projectPath": "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
         "packagesPath": "C:\\Users\\Eben Schumann\\.nuget\\packages\\",
-        "outputPath": "E:\\MonogameProjects\\OurborosVandaleria.Desktop\\obj\\",
+        "outputPath": "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurborosVandaleria.Desktop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\Eben Schumann\\AppData\\Roaming\\NuGet\\NuGet.Config",

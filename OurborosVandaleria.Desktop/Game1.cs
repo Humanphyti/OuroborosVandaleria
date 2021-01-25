@@ -1,4 +1,4 @@
-﻿using OuroborosVandaleria.
+﻿using OuroborosVandaleria;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -20,7 +20,9 @@ namespace OurborosVandaleria.Desktop
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            _graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.Dimensions.X;
+            _graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.Dimensions.Y;
+            _graphics.ApplyChanges();
             base.Initialize();
         }
 
@@ -31,15 +33,21 @@ namespace OurborosVandaleria.Desktop
         {
             
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            myTexture = Content.Load<Texture2D>("Village/farmingVillageMap");
+            ScreenManager.Instance.LoadContent(Content);
             // TODO: use this.Content to load your game content here
+        }
+
+        protected override void UnloadContent()
+        {
+            ScreenManager.Instance.UnloadContent();
+            base.UnloadContent();
         }
 
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
+            ScreenManager.Instance.Update(gameTime);
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -53,6 +61,8 @@ namespace OurborosVandaleria.Desktop
             _spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
             _spriteBatch.Draw(myTexture, spritePosition, Color.White);
             _spriteBatch.End();
+
+            ScreenManager.Instance.Draw(_spriteBatch);
             base.Draw(gameTime);
         }
     }

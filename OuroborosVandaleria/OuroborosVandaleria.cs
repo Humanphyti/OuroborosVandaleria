@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+﻿/*using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -28,7 +28,7 @@ namespace OuroborosVandaleria
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            myTexture = Content.Load<Texture2D>("Village/farmingVillageMap");
+            //myTexture = Content.Load<Texture2D>("Village/farmingVillageMap");
             // TODO: use this.Content to load your game content here
         }
 
@@ -53,4 +53,4 @@ namespace OuroborosVandaleria
             base.Draw(gameTime);
         }
     }
-}
+}*/

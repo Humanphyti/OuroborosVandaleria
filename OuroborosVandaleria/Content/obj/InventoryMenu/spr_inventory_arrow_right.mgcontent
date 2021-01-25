@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>F:/MonogameProjects/OuroborosVandaleria/Content/InventoryMenu/spr_inventory_arrow_right.png</SourceFile>
-  <SourceTime>2020-09-09T19:47:52-07:00</SourceTime>
-  <DestFile>F:/MonogameProjects/OuroborosVandaleria/Content/bin/InventoryMenu/spr_inventory_arrow_right.xnb</DestFile>
-  <DestTime>2021-01-17T19:14:07.7091546-08:00</DestTime>
+  <SourceFile>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/InventoryMenu/spr_inventory_arrow_right.png</SourceFile>
+  <SourceTime>2021-01-24T17:20:02.3590857-08:00</SourceTime>
+  <DestFile>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/bin/InventoryMenu/spr_inventory_arrow_right.xnb</DestFile>
+  <DestTime>2021-01-24T20:22:14.4307955-08:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-07:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>F:/MonogameProjects/OuroborosVandaleria/Content/SpellMenu/spr_spellscreen_bg.png</SourceFile>
-  <SourceTime>2020-08-27T12:44:54-07:00</SourceTime>
-  <DestFile>F:/MonogameProjects/OuroborosVandaleria/Content/bin/SpellMenu/spr_spellscreen_bg.xnb</DestFile>
-  <DestTime>2021-01-17T19:14:08.2432287-08:00</DestTime>
+  <SourceFile>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/SpellMenu/spr_spellscreen_bg.png</SourceFile>
+  <SourceTime>2021-01-24T17:20:02.376744-08:00</SourceTime>
+  <DestFile>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/bin/SpellMenu/spr_spellscreen_bg.xnb</DestFile>
+  <DestTime>2021-01-24T20:22:14.971127-08:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-07:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
