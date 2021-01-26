@@ -14,6 +14,9 @@
     <None Remove="Icon.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\OuroborosVandaleria\OuroborosVandaleria.cs" Link="OuroborosVandaleria.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
     <EmbeddedResource Include="Icon.bmp" />
   </ItemGroup>
@@ -29,11 +32,10 @@
   </ItemGroup>
   <Import Project="..\OuroborosVandaleria\OuroborosVandaleria.projitems" Label="Shared" />
   <ItemGroup>
-    <MonoGameContentReference Remove="..\OuroborosVandaleria\Content\Content.mgcb" />
+    <MonoGameContentReference Include="..\OuroborosVandaleria\Content\Animations.mgcb" Link="Content\Animations.mgcb" />
+    <MonoGameContentReference Include="..\OuroborosVandaleria\Content\UserInterface.mgcb" Link="Content\UserInterface.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\OuroborosVandaleria\Content\Animations.mgcb" Link="Content\Animations.mgcb" />
-    <None Include="..\OuroborosVandaleria\Content\Content.mgcb" Link="Content\Content.mgcb" />
-    <None Include="..\OuroborosVandaleria\Content\UserInterface.mgcb" Link="Content\UserInterface.mgcb" />
+    <MonoGameContentReference Update="C:\Users\Eben Schumann\Documents\GitHub\OuroborosVandaleria\OuroborosVandaleria\Content\Content.mgcb" Link="Content\Content.mgcb" />
   </ItemGroup>
 </Project>
