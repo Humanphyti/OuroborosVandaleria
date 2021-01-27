@@ -1,15 +1,16 @@
-﻿/*using Microsoft.Xna.Framework;
+﻿using OuroborosVandaleria;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace OuroborosVandaleria
+namespace OurborosVandaleria.Desktop
 {
-    public class OuroborosVandaleria : Game
+    public class Game1 : Game
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        public OuroborosVandaleria()
+        public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -19,24 +20,34 @@ namespace OuroborosVandaleria
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            _graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.Dimensions.X;
+            _graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.Dimensions.Y;
+            _graphics.ApplyChanges();
             base.Initialize();
         }
 
         Texture2D myTexture;
         Vector2 spritePosition = Vector2.Zero;
+        //Vector2 spriteSpeed = new Vector2(50.0f, 50.0f);
         protected override void LoadContent()
         {
+            
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            //myTexture = Content.Load<Texture2D>("Village/farmingVillageMap");
+            ScreenManager.Instance.LoadContent(Content);
             // TODO: use this.Content to load your game content here
+        }
+
+        protected override void UnloadContent()
+        {
+            ScreenManager.Instance.UnloadContent();
+            base.UnloadContent();
         }
 
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
+            ScreenManager.Instance.Update(gameTime);
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -50,7 +61,9 @@ namespace OuroborosVandaleria
             _spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
             _spriteBatch.Draw(myTexture, spritePosition, Color.White);
             _spriteBatch.End();
+
+            ScreenManager.Instance.Draw(_spriteBatch);
             base.Draw(gameTime);
         }
     }
-}*/
+}

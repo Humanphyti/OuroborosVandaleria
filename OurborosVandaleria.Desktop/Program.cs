@@ -1,5 +1,4 @@
 ﻿using System;
-using OuroborosVandaleriaGame;
 
 namespace OurborosVandaleria.Desktop
 {
@@ -8,7 +7,7 @@ namespace OurborosVandaleria.Desktop
         [STAThread]
         static void Main()
         {
-            using (var game = new OuroborosVandaleria())
+            using (var game = new Game1())
                 game.Run();
         }
     }
