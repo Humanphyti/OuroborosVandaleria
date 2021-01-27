@@ -9,15 +9,21 @@
     <Import_RootNamespace>OuroborosVandaleria</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)GameScreen.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ScreenManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screens\GameScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screens\ScreenManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OuroborosVandaleria.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SplashScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screens\SplashScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\XMLSerialization.cs" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
     <None Include="$(MSBuildThisFileDirectory)Content\Animations.mgcb" />
+    <MonoGameContentReference Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
+    <MonoGameContentReference Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
     <None Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
     <None Include="$(MSBuildThisFileDirectory)Content\UserInterface.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Screens\" />
   </ItemGroup>
 </Project>
