@@ -8,7 +8,7 @@ namespace OuroborosVandaleriaCore.Serialization
 {
     class XMLSerialization
     {
-        public T Save()
+        public void Save()
         {
 
         }
@@ -17,11 +17,5 @@ namespace OuroborosVandaleriaCore.Serialization
         {
 
         }
-    }
-
-    class MyTest
-    {
-        public int elf = 23;
-        public string hello = "Hello World";
     }
 }

@@ -26,8 +26,6 @@ namespace OuroborosVandaleriaGame
             base.Initialize();
         }
 
-        Texture2D myTexture;
-        Vector2 spritePosition = Vector2.Zero;
         //Vector2 spriteSpeed = new Vector2(50.0f, 50.0f);
         protected override void LoadContent()
         {

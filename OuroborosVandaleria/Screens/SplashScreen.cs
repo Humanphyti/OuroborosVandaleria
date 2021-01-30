@@ -10,12 +10,16 @@ namespace OuroborosVandaleriaCore.Screen
     {
         Texture2D image;
         string path;
+        private SpriteFont font;
 
         public override void LoadContent()
         {
             base.LoadContent();
+
             path = "IntroScreen/SPR_titlescreen_bg";
             image = content.Load<Texture2D>(path);
+            path = "Village/LonglivetheKing";
+            font = content.Load<SpriteFont>(path);
         }
 
         public override void UnloadContent()
@@ -31,6 +35,8 @@ namespace OuroborosVandaleriaCore.Screen
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(image, Vector2.Zero, Color.White);
+            spriteBatch.DrawString(font, "Hello, Sailor", new Vector2(100, 100), Color.Black);
+
             base.Draw(spriteBatch);
         }
     }
