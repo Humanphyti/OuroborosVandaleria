@@ -50,6 +50,14 @@
               "target": "Package",
               "version": "[3.8.0.1641, )"
             },
+            "MonoGame.Extended.Tiled": {
+              "target": "Package",
+              "version": "[3.8.0, )"
+            },
+            "MonoGame.Framework.Content.Pipeline.Portable": {
+              "target": "Package",
+              "version": "[3.7.1.189, )"
+            },
             "MonoGame.Framework.DesktopGL": {
               "target": "Package",
               "version": "[3.8.0.1641, )"

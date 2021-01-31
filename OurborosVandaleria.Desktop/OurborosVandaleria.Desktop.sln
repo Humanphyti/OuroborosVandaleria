@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OurborosVandaleria.Desktop"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "OuroborosVandaleria", "..\OuroborosVandaleria\OuroborosVandaleria.shproj", "{A0CDBD0E-3A41-42B7-9425-A838BC2C7383}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OurorborosContentPipeline", "..\OurorborosContentPipeline\OurorborosContentPipeline.csproj", "{B1655D02-5DEB-426A-A231-9CDC70831046}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\OuroborosVandaleria\OuroborosVandaleria.projitems*{99fb68e3-357b-479d-a840-24eaef51a9ec}*SharedItemsImports = 5
@@ -21,6 +23,10 @@ Global
 		{99FB68E3-357B-479D-A840-24EAEF51A9EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99FB68E3-357B-479D-A840-24EAEF51A9EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99FB68E3-357B-479D-A840-24EAEF51A9EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1655D02-5DEB-426A-A231-9CDC70831046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1655D02-5DEB-426A-A231-9CDC70831046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1655D02-5DEB-426A-A231-9CDC70831046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1655D02-5DEB-426A-A231-9CDC70831046}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
