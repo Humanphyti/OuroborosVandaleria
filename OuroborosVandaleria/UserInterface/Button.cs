@@ -8,10 +8,9 @@ namespace OuroborosVandaleria.UserInterface
 {
     class Button
     {
-        protected ContentManager content;
-        private Texture2D button;
 
-
+        Button next;
+        Button previous;
 
         protected virtual void OnSelect()
         {
@@ -32,7 +31,6 @@ namespace OuroborosVandaleria.UserInterface
         {
             return false;
         }
-
 
     }
 }
