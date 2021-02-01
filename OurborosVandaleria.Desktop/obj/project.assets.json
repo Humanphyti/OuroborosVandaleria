@@ -40,6 +40,31 @@
           "lib/netstandard2.0/MonoGame.Extended.Graphics.dll": {}
         }
       },
+      "MonoGame.Extended.Gui/3.8.0": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "3.8.0",
+          "MonoGame.Extended.Input": "3.8.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.Gui.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.Gui.dll": {}
+        }
+      },
+      "MonoGame.Extended.Input/3.8.0": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "3.8.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.Input.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.Input.dll": {}
+        }
+      },
       "MonoGame.Extended.Tiled/3.8.0": {
         "type": "package",
         "dependencies": {
@@ -263,6 +288,30 @@
         "monogame.extended.graphics.nuspec"
       ]
     },
+    "MonoGame.Extended.Gui/3.8.0": {
+      "sha512": "Q40QIqEsmX3+tpLqENswMRIQ1FBf/3llJDGk3zTStdb2ejs4LGYWNeBIEbGqj3anfecT4qgNnJKCIaL61Cmx7A==",
+      "type": "package",
+      "path": "monogame.extended.gui/3.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/MonoGame.Extended.Gui.dll",
+        "monogame.extended.gui.3.8.0.nupkg.sha512",
+        "monogame.extended.gui.nuspec"
+      ]
+    },
+    "MonoGame.Extended.Input/3.8.0": {
+      "sha512": "90RtzI6N+RCGHolI/yTwGT47vqSyr+IEe+yKxzm4/euc8rDVnbAwz4lRifkAEdHx29X3apD0Ui5ve0C/7yO7wQ==",
+      "type": "package",
+      "path": "monogame.extended.input/3.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/MonoGame.Extended.Input.dll",
+        "monogame.extended.input.3.8.0.nupkg.sha512",
+        "monogame.extended.input.nuspec"
+      ]
+    },
     "MonoGame.Extended.Tiled/3.8.0": {
       "sha512": "lXE+Ysvep5FCozHlj862kqIG6TWCmjNgjF7xWbJ4ZDkqG+Khi9VrG5G8Pdj80TMRpDhZOz3PICinVZElZU639g==",
       "type": "package",
@@ -361,6 +410,8 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "MonoGame.Content.Builder.Task >= 3.8.0.1641",
+      "MonoGame.Extended.Gui >= 3.8.0",
+      "MonoGame.Extended.Input >= 3.8.0",
       "MonoGame.Extended.Tiled >= 3.8.0",
       "MonoGame.Framework.Content.Pipeline.Portable >= 3.7.1.189",
       "MonoGame.Framework.DesktopGL >= 3.8.0.1641"
@@ -416,6 +467,14 @@
           "MonoGame.Content.Builder.Task": {
             "target": "Package",
             "version": "[3.8.0.1641, )"
+          },
+          "MonoGame.Extended.Gui": {
+            "target": "Package",
+            "version": "[3.8.0, )"
+          },
+          "MonoGame.Extended.Input": {
+            "target": "Package",
+            "version": "[3.8.0, )"
           },
           "MonoGame.Extended.Tiled": {
             "target": "Package",

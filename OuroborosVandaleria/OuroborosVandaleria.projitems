@@ -15,6 +15,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Screens\SplashScreen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\XMLSerialization.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UserInterface\Button.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserInterface\UIState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UserInterface\ExitButton.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UserInterface\PlayButton.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UserInterface\UIManager.cs" />
