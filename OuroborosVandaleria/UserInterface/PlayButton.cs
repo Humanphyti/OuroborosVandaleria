@@ -4,11 +4,8 @@ using System.Text;
 
 namespace OuroborosVandaleria.UserInterface
 {
-    class PlayButton : Button
+    class PlayButton
     {
-        protected override void OnClick()
-        {
-
-        }
+        
     }
 }

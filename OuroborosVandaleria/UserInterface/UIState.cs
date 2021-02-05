@@ -10,6 +10,6 @@ namespace OuroborosVandaleria.UserInterface
         {
             MAINMENU,
 
-        }
+        };
     }
 }

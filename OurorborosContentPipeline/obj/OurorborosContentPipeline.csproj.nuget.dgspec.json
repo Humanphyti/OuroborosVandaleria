@@ -1,21 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurorborosContentPipeline\\OurorborosContentPipeline.csproj": {}
+    "E:\\MonogameProjects\\OurorborosContentPipeline\\OurorborosContentPipeline.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurorborosContentPipeline\\OurorborosContentPipeline.csproj": {
+    "E:\\MonogameProjects\\OurorborosContentPipeline\\OurorborosContentPipeline.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurorborosContentPipeline\\OurorborosContentPipeline.csproj",
+        "projectUniqueName": "E:\\MonogameProjects\\OurorborosContentPipeline\\OurorborosContentPipeline.csproj",
         "projectName": "OurorborosContentPipeline",
-        "projectPath": "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurorborosContentPipeline\\OurorborosContentPipeline.csproj",
+        "projectPath": "E:\\MonogameProjects\\OurorborosContentPipeline\\OurorborosContentPipeline.csproj",
         "packagesPath": "C:\\Users\\Eben Schumann\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurorborosContentPipeline\\obj\\",
+        "outputPath": "E:\\MonogameProjects\\OurorborosContentPipeline\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\Eben Schumann\\AppData\\Roaming\\NuGet\\NuGet.Config",

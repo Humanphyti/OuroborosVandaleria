@@ -168,3 +168,5 @@ C:\Users\Eben Schumann\Documents\GitHub\OuroborosVandaleria\OurborosVandaleria.D
 C:\Users\Eben Schumann\Documents\GitHub\OuroborosVandaleria\OurborosVandaleria.Desktop\bin\Debug\netcoreapp3.1\MonoGame.Extended.Tiled.dll
 C:\Users\Eben Schumann\Documents\GitHub\OuroborosVandaleria\OurborosVandaleria.Desktop\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\Eben Schumann\Documents\GitHub\OuroborosVandaleria\OurborosVandaleria.Desktop\bin\Debug\netcoreapp3.1\Content\Village\LonglivetheKing.xnb
+E:\MonogameProjects\OurborosVandaleria.Desktop\obj\Debug\netcoreapp3.1\OurborosVandaleria.Desktop.dll
+E:\MonogameProjects\OurborosVandaleria.Desktop\obj\Debug\netcoreapp3.1\OurborosVandaleria.Desktop.pdb

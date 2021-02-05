@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Vb+L9BlEhWUHP9IPFsovcwuhw1UWpqePgfeGkvxwQSy7RhlTj+YifshlGsXX+fu4GnTN03ajyC59S8pB0kDOhg==",
+  "dgSpecHash": "pD0QwGlhtF4rkZ315dmKaq1C/w4yjHWKgVciDUTswI1CORIICJ+IJAGEl3yiyk4CzUXlOo1BlL0AJPAbifXV+g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
+  "projectFilePath": "E:\\MonogameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Eben Schumann\\.nuget\\packages\\menubuddy\\2.0.83\\menubuddy.2.0.83.nupkg.sha512",
     "C:\\Users\\Eben Schumann\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1641\\monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
     "C:\\Users\\Eben Schumann\\.nuget\\packages\\monogame.extended\\3.8.0\\monogame.extended.3.8.0.nupkg.sha512",
     "C:\\Users\\Eben Schumann\\.nuget\\packages\\monogame.extended.graphics\\3.8.0\\monogame.extended.graphics.3.8.0.nupkg.sha512",
@@ -16,6 +17,16 @@
     "C:\\Users\\Eben Schumann\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MenuBuddy 2.0.83' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "MenuBuddy",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

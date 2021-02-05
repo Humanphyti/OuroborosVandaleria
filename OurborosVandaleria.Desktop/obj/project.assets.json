@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "MenuBuddy/2.0.83": {
+        "type": "package",
+        "compile": {
+          "lib/net451/MenuBuddy.WindowsDX.dll": {}
+        },
+        "runtime": {
+          "lib/net451/MenuBuddy.WindowsDX.dll": {}
+        }
+      },
       "MonoGame.Content.Builder.Task/3.8.0.1641": {
         "type": "package",
         "build": {
@@ -157,6 +166,23 @@
     }
   },
   "libraries": {
+    "MenuBuddy/2.0.83": {
+      "sha512": "y7x+AgUpNmcZxsEXpcmMv8yVAdn7ttmnPS1eah9PZQVL2O2n7bDp/IuTQIEeSUUv6Lo0poO14iyoOdXtzKA4tQ==",
+      "type": "package",
+      "path": "menubuddy/2.0.83",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/MenuBuddy.Android.dll",
+        "lib/MonoAndroid10/MenuBuddy.Android.pdb",
+        "lib/Xamarin.iOS10/MenuBuddy.iOS.dll",
+        "lib/Xamarin.iOS10/MenuBuddy.iOS.pdb",
+        "lib/net451/MenuBuddy.WindowsDX.dll",
+        "lib/net451/MenuBuddy.WindowsDX.pdb",
+        "menubuddy.2.0.83.nupkg.sha512",
+        "menubuddy.nuspec"
+      ]
+    },
     "MonoGame.Content.Builder.Task/3.8.0.1641": {
       "sha512": "oHA60q9MhkqGnSiJlXosdynD400sQ/j1Ef+0XkJYIQT4Io9RQ6Zk8i0vjpnIbQ0PgsoaQN3IRYjNzkhqq3uUGA==",
       "type": "package",
@@ -409,6 +435,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "MenuBuddy >= 2.0.83",
       "MonoGame.Content.Builder.Task >= 3.8.0.1641",
       "MonoGame.Extended.Gui >= 3.8.0",
       "MonoGame.Extended.Input >= 3.8.0",
@@ -419,21 +446,19 @@
   },
   "packageFolders": {
     "C:\\Users\\Eben Schumann\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
+      "projectUniqueName": "E:\\MonogameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
       "projectName": "OurborosVandaleria.Desktop",
-      "projectPath": "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
+      "projectPath": "E:\\MonogameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
       "packagesPath": "C:\\Users\\Eben Schumann\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurborosVandaleria.Desktop\\obj\\",
+      "outputPath": "E:\\MonogameProjects\\OurborosVandaleria.Desktop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\Eben Schumann\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -464,6 +489,10 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "MenuBuddy": {
+            "target": "Package",
+            "version": "[2.0.83, )"
+          },
           "MonoGame.Content.Builder.Task": {
             "target": "Package",
             "version": "[3.8.0.1641, )"
@@ -509,6 +538,16 @@
     }
   },
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MenuBuddy 2.0.83' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "MenuBuddy",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

@@ -1,21 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj": {}
+    "E:\\MonogameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj": {
+    "E:\\MonogameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
+        "projectUniqueName": "E:\\MonogameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
         "projectName": "OurborosVandaleria.Desktop",
-        "projectPath": "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
+        "projectPath": "E:\\MonogameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
         "packagesPath": "C:\\Users\\Eben Schumann\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eben Schumann\\Documents\\GitHub\\OuroborosVandaleria\\OurborosVandaleria.Desktop\\obj\\",
+        "outputPath": "E:\\MonogameProjects\\OurborosVandaleria.Desktop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\Eben Schumann\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,6 +45,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "MenuBuddy": {
+              "target": "Package",
+              "version": "[2.0.83, )"
+            },
             "MonoGame.Content.Builder.Task": {
               "target": "Package",
               "version": "[3.8.0.1641, )"
