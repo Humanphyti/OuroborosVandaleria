@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
-namespace OuroborosVandaleria.UserInterface
+namespace OuroborosVandaleriaCore.UserInterface
 {
     class UIManager
     {
@@ -42,12 +42,12 @@ namespace OuroborosVandaleria.UserInterface
 
         public void Update(GameTime gameTime)
         {
-            currentScreen.Update(gameTime);
+            //currentScreen.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            currentScreen.Draw(spriteBatch);
+            //currentScreen.Draw(spriteBatch);
         }
 
     }

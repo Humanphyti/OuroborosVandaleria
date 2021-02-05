@@ -4,11 +4,11 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/Village/farmingVillageMap.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/Village/RuinedKing.spritefont</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/Village/farmingVillageMap.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/Village/LongLiveTheKing.spritefont</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
-    <File>Village/LonglivetheKing.spritefont</File>
+    <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

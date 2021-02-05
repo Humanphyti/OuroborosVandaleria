@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace OuroborosVandaleriaCore.UserInterface
+namespace OuroborosVandaleriaCore.Maps
 {
-    class PlayButton
+    class Village
     {
-        
     }
 }

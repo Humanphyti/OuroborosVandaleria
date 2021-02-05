@@ -4,70 +4,70 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen_bg.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen_frame1.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen_frame2.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen_frame3.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen_frame4.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen_frame5.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen_frames.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen_weaponwheel.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/HealthBars/spr_boss_healthbar.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/HealthBars/spr_boss_healthbar_accent.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/HealthBars/spr_boss_healthbar_bar.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/HealthBars/spr_boss_healthbar_frame.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/HealthBars/spr_enemyhealthbar.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/HealthBars/spr_enemyhealthbar_bar.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/HealthBars/spr_enemyhealthbar_frame.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/HealthBars/spr_playerhealthbar.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/HealthBars/spr_playerhealthbar_accent.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/HealthBars/spr_playerhealthbar_bar.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/HealthBars/spr_playerhealthbar_frame.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/HealthBars/spr_weaponwheel.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/HealthBars/textbox.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/IntroScreen/SPR_title_open_sheet.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/IntroScreen/SPR_titlescreen.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/IntroScreen/SPR_titlescreen_bg.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/IntroScreen/SPR_titlescreen_button.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/IntroScreen/SPR_titlescreen_logo.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/IntroScreen/SPR_titlescreen_ouroboros.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/IntroScreen/SPR_titlescreen_vandaleria.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/IntroScreen/titleScreen_2.mp4</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/InventoryMenu/spr_inventory_arrow_left.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/InventoryMenu/spr_inventory_arrow_right.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/InventoryMenu/spr_inventory_bg.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/InventoryMenu/spr_inventory_frame.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/InventoryMenu/spr_inventory_frame2.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/InventoryMenu/spr_inventory_gold.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/InventoryMenu/spr_inventory_itembox.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/InventoryMenu/spr_items.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/NameScreen/spr_enter_name.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/NameScreen/spr_enter_name_lettering.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/NameScreen/spr_ok.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/OptionsMenu/spr_controls.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/OptionsMenu/spr_controls_bg.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/OptionsMenu/spr_controls_controller.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/OptionsMenu/spr_controls_keyboard.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/OptionsMenu/spr_controls_silver.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/OptionsMenu/spr_resolution.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/PauseMenu/spr_continue.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/PauseMenu/spr_exit_desktop.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/PauseMenu/spr_exit_title.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/PauseMenu/spr_pause.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/PauseMenu/spr_pause_bg.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/SpellMenu/spr_spells 1.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/SpellMenu/spr_spells_frame_1.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/SpellMenu/spr_spells_frame_2.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/SpellMenu/spr_spells_frame_3.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/SpellMenu/spr_spellscreen_bg.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/SpellMenu/spr_spellscreen_table.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/TitleScreen/spr_options.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/TitleScreen/spr_options_gold.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/TitleScreen/spr_play_demo.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/TitleScreen/spr_pointer 1.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/TitleScreen/spr_pointer.png</File>
-    <File>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/TitleScreen/spr_press_start.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen_bg.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen_frame1.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen_frame2.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen_frame3.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen_frame4.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen_frame5.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen_frames.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/EquipementScreen/spr_equipmentscreen_weaponwheel.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/HealthBars/spr_boss_healthbar.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/HealthBars/spr_boss_healthbar_accent.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/HealthBars/spr_boss_healthbar_bar.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/HealthBars/spr_boss_healthbar_frame.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/HealthBars/spr_enemyhealthbar.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/HealthBars/spr_enemyhealthbar_bar.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/HealthBars/spr_enemyhealthbar_frame.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/HealthBars/spr_playerhealthbar.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/HealthBars/spr_playerhealthbar_accent.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/HealthBars/spr_playerhealthbar_bar.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/HealthBars/spr_playerhealthbar_frame.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/HealthBars/spr_weaponwheel.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/HealthBars/textbox.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/IntroScreen/SPR_title_open_sheet.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/IntroScreen/SPR_titlescreen.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/IntroScreen/SPR_titlescreen_bg.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/IntroScreen/SPR_titlescreen_button.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/IntroScreen/SPR_titlescreen_logo.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/IntroScreen/SPR_titlescreen_ouroboros.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/IntroScreen/SPR_titlescreen_vandaleria.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/IntroScreen/titleScreen_2.mp4</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/InventoryMenu/spr_inventory_arrow_left.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/InventoryMenu/spr_inventory_arrow_right.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/InventoryMenu/spr_inventory_bg.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/InventoryMenu/spr_inventory_frame.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/InventoryMenu/spr_inventory_frame2.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/InventoryMenu/spr_inventory_gold.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/InventoryMenu/spr_inventory_itembox.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/InventoryMenu/spr_items.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/NameScreen/spr_enter_name.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/NameScreen/spr_enter_name_lettering.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/NameScreen/spr_ok.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/OptionsMenu/spr_controls.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/OptionsMenu/spr_controls_bg.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/OptionsMenu/spr_controls_controller.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/OptionsMenu/spr_controls_keyboard.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/OptionsMenu/spr_controls_silver.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/OptionsMenu/spr_resolution.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/PauseMenu/spr_continue.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/PauseMenu/spr_exit_desktop.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/PauseMenu/spr_exit_title.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/PauseMenu/spr_pause.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/PauseMenu/spr_pause_bg.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/SpellMenu/spr_spells 1.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/SpellMenu/spr_spells_frame_1.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/SpellMenu/spr_spells_frame_2.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/SpellMenu/spr_spells_frame_3.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/SpellMenu/spr_spellscreen_bg.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/SpellMenu/spr_spellscreen_table.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/TitleScreen/spr_options.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/TitleScreen/spr_options_gold.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/TitleScreen/spr_play_demo.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/TitleScreen/spr_pointer 1.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/TitleScreen/spr_pointer.png</File>
+    <File>E:/MonogameProjects/OuroborosVandaleria/Content/TitleScreen/spr_press_start.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

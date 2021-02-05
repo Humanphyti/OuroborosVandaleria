@@ -25,10 +25,10 @@
 /processorParam:TextureFormat=Color
 /build:Village/farmingVillageMap.png
 
-#begin Village/RuinedKing.spritefont
+#begin Village/LongLiveTheKing.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
-/build:Village/RuinedKing.spritefont;Village/LonglivetheKing.spritefont
+/build:Village/LongLiveTheKing.spritefont
 

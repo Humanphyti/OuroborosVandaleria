@@ -1,7 +1,7 @@
 ﻿using System;
 using OuroborosVandaleriaGame;
 
-namespace OurborosVandaleria.Desktop
+namespace OurborosVandaleriaDesktop
 {
     public static class Program
     {

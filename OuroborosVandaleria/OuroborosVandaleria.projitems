@@ -9,6 +9,7 @@
     <Import_RootNamespace>OuroborosVandaleria</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Maps\Village.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Screens\GameScreen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Screens\ScreenManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OuroborosVandaleria.cs" />
@@ -28,7 +29,6 @@
     <None Include="$(MSBuildThisFileDirectory)Content\UserInterface.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Maps\" />
     <Folder Include="$(MSBuildThisFileDirectory)Screens\" />
   </ItemGroup>
 </Project>

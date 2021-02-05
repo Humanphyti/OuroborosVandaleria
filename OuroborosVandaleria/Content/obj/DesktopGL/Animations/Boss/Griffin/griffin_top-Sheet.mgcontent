@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/Boss/Griffin/griffin_top-Sheet.png</SourceFile>
-  <SourceTime>2021-01-24T17:20:02.1218813-08:00</SourceTime>
-  <DestFile>C:/Users/Eben Schumann/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleria/Content/bin/DesktopGL/Animations/Boss/Griffin/griffin_top-Sheet.xnb</DestFile>
-  <DestTime>2021-01-30T21:30:56.9775364-08:00</DestTime>
+  <SourceFile>E:/MonogameProjects/OuroborosVandaleria/Content/Boss/Griffin/griffin_top-Sheet.png</SourceFile>
+  <SourceTime>2020-10-27T20:51:30-07:00</SourceTime>
+  <DestFile>E:/MonogameProjects/OuroborosVandaleria/Content/bin/DesktopGL/Animations/Boss/Griffin/griffin_top-Sheet.xnb</DestFile>
+  <DestTime>2021-02-05T13:05:59.8965479-08:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-07:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

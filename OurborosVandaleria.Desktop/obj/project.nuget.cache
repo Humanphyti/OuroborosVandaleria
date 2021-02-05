@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pD0QwGlhtF4rkZ315dmKaq1C/w4yjHWKgVciDUTswI1CORIICJ+IJAGEl3yiyk4CzUXlOo1BlL0AJPAbifXV+g==",
+  "dgSpecHash": "rlUx2d5n1x3XEeF/Oro/1dhQptVn/TCmS2+AmIEVgbus+75rNJopYwQAyc77adaAKxnQTTbq12ZnLjPANAExVA==",
   "success": true,
   "projectFilePath": "E:\\MonogameProjects\\OurborosVandaleria.Desktop\\OurborosVandaleria.Desktop.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,6 @@
     "C:\\Users\\Eben Schumann\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1641\\monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
     "C:\\Users\\Eben Schumann\\.nuget\\packages\\monogame.extended\\3.8.0\\monogame.extended.3.8.0.nupkg.sha512",
     "C:\\Users\\Eben Schumann\\.nuget\\packages\\monogame.extended.graphics\\3.8.0\\monogame.extended.graphics.3.8.0.nupkg.sha512",
-    "C:\\Users\\Eben Schumann\\.nuget\\packages\\monogame.extended.gui\\3.8.0\\monogame.extended.gui.3.8.0.nupkg.sha512",
     "C:\\Users\\Eben Schumann\\.nuget\\packages\\monogame.extended.input\\3.8.0\\monogame.extended.input.3.8.0.nupkg.sha512",
     "C:\\Users\\Eben Schumann\\.nuget\\packages\\monogame.extended.tiled\\3.8.0\\monogame.extended.tiled.3.8.0.nupkg.sha512",
     "C:\\Users\\Eben Schumann\\.nuget\\packages\\monogame.framework.content.pipeline.portable\\3.7.1.189\\monogame.framework.content.pipeline.portable.3.7.1.189.nupkg.sha512",
