@@ -10,12 +10,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)CharacterControl\Player.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\GameStateManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\InputHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OuroborosVandaleria.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Screen\GameScreen.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Screen\MainMenuScreen.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Screen\ScreenManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Screen\SplashScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\BaseGameState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\GameState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screen\TitleScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Content\" />
