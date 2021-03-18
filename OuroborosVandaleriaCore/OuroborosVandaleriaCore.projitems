@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>6efba8a9-a407-4029-bdd0-651d22a87386</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>OuroborosVandaleriaCore</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CharacterControl\Player.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OuroborosVandaleria.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screen\GameScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screen\MainMenuScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screen\ScreenManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screen\SplashScreen.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Content\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Maps\" />
+    <Folder Include="$(MSBuildThisFileDirectory)UserInterface\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Serialization\" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
+    <None Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
+  </ItemGroup>
+</Project>
