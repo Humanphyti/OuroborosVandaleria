@@ -13,6 +13,9 @@ namespace OuroborosVandaleriaCore.Engine
         static KeyboardState keyboardState;
         static KeyboardState lastKeyboardState;
 
+        static GamePadState[] gamePadStates;
+        static GamePadState[] lastGamePadStates;
+
         //getters
         public static KeyboardState KeyboardState
         {
@@ -24,10 +27,25 @@ namespace OuroborosVandaleriaCore.Engine
             get { return lastKeyboardState; }
         }
 
+        public static GamePadState[] GamePadStates
+        {
+            get { return gamePadStates; }
+        }
+
+        public static GamePadState[] LastGamePadStates
+        {
+            get { return lastGamePadStates; }
+        }
+
         //constructor
         public InputHandler(Game game) : base(game)
         {
             keyboardState = Keyboard.GetState();
+
+            gamePadStates = new GamePadState[Enum.GetValues(typeof(PlayerIndex)).Length];
+
+            foreach (PlayerIndex index in Enum.GetValues(typeof(PlayerIndex)))
+                gamePadStates[(int)index] = GamePad.GetState(index);
         }
 
         //Monogame Methods
@@ -40,6 +58,11 @@ namespace OuroborosVandaleriaCore.Engine
         {
             lastKeyboardState = keyboardState;
             keyboardState = Keyboard.GetState();
+
+            lastGamePadStates = (GamePadState[])gamePadStates.Clone();
+            foreach (PlayerIndex index in Enum.GetValues(typeof(PlayerIndex)))
+                gamePadStates[(int)index] = GamePad.GetState(index);
+
             base.Update(gameTime);
         }
 
@@ -65,5 +88,21 @@ namespace OuroborosVandaleriaCore.Engine
             return keyboardState.IsKeyDown(key);
         }
 
+
+        //is button up, down, or just pressed
+        public static bool ButtonReleased(Buttons button, PlayerIndex index)
+        {
+            return gamePadStates[(int)index].IsButtonUp(button) && lastGamePadStates[(int)index].IsButtonDown(button);
+        }
+
+        public static bool ButtonPressed(Buttons button, PlayerIndex index)
+        {
+            return gamePadStates[(int)index].IsButtonDown(button) && lastGamePadStates[(int)index].IsButtonUp(button);
+        }
+
+        public static bool ButtonDown(Buttons button, PlayerIndex index)
+        {
+            return gamePadStates[(int)index].IsButtonDown(button);
+        }
     }
 }

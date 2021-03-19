@@ -10,16 +10,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)CharacterControl\Player.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\GameStateManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Controls\Control.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Controls\ControlManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Controls\Label.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Controls\LinkLabel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\GameState\GameStateManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\InputHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OuroborosVandaleria.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\BaseGameState.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\GameState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\GameState\BaseGameState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\GameState\GameState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screen\StartMenuScreen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Screen\TitleScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Content\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Engine\GameState\" />
     <Folder Include="$(MSBuildThisFileDirectory)Maps\" />
     <Folder Include="$(MSBuildThisFileDirectory)UserInterface\" />
     <Folder Include="$(MSBuildThisFileDirectory)Serialization\" />

@@ -4,7 +4,7 @@ using System.Text;
 
 using Microsoft.Xna.Framework;
 
-namespace OuroborosVandaleriaCore.Engine
+namespace OuroborosVandaleriaCore.Engine.State
 {
     public class GameStateManager : GameComponent
     {

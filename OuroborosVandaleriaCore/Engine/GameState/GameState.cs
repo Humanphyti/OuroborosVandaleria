@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace OuroborosVandaleriaCore.Engine
+namespace OuroborosVandaleriaCore.Engine.State
 {
     public abstract partial class GameState : DrawableGameComponent
     {

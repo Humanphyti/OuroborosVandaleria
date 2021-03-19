@@ -1,6 +1,8 @@
 ﻿using OuroborosVandaleriaCore.Screen;
 using OuroborosVandaleriaCore.CharacterControl;
 using OuroborosVandaleriaCore.Engine;
+using OuroborosVandaleriaCore.Engine.State;
+using OuroborosVandaleriaCore.Engine.Controls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -13,6 +15,7 @@ namespace OuroborosVandaleriaGame
         public SpriteBatch _spriteBatch;
         GameStateManager stateManager;
         public TitleScreen TitleScreen;
+        public StartMenuScreen StartMenuScreen;
 
         const int screenWidth = 1024;
         const int screenHeight = 768;
@@ -34,6 +37,7 @@ namespace OuroborosVandaleriaGame
             Components.Add(stateManager);
 
             TitleScreen = new TitleScreen(this, stateManager);
+            StartMenuScreen = new StartMenuScreen(this, stateManager);
             stateManager.ChangeState(TitleScreen);
         }
 
