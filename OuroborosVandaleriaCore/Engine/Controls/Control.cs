@@ -6,13 +6,16 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 
+using OuroborosVandaleriaCore.Engine;
+
 namespace OuroborosVandaleriaCore.Engine.Controls
 {
     public abstract class Control
     {
         protected string name;
         protected string text;
-        protected Vector2 size;
+        //protected Texture2D texture;
+        protected Rectangle size;
         protected Vector2 position;
         protected object value;
         protected bool hasFocus;
@@ -22,6 +25,8 @@ namespace OuroborosVandaleriaCore.Engine.Controls
         protected SpriteFont spriteFont;
         protected Color color;
         protected string type;
+        protected Sprite sprite;
+
 
         public event EventHandler Selected;
 
@@ -38,7 +43,13 @@ namespace OuroborosVandaleriaCore.Engine.Controls
             set { text = value; }
         }
 
-        public Vector2 Size
+        /*public Texture2D Texture
+        {
+            get { return texture; }
+            set { texture = value; }
+        }
+        */
+        public Rectangle Size
         {
             get { return size; }
             set { size = value; }
@@ -100,6 +111,12 @@ namespace OuroborosVandaleriaCore.Engine.Controls
         {
             get { return type; }
             set { type = value; }
+        }
+
+        public Sprite Sprite
+        {
+            get { return sprite; }
+            set { sprite = value; }
         }
 
         //constructor

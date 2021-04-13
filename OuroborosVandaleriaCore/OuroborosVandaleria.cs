@@ -16,6 +16,8 @@ namespace OuroborosVandaleriaGame
         GameStateManager stateManager;
         public TitleScreen TitleScreen;
         public StartMenuScreen StartMenuScreen;
+        public GamePlayScreen GamePlayScreen;
+        public OptionsScreen OptionsScreen;
 
         const int screenWidth = 1024;
         const int screenHeight = 768;
@@ -38,6 +40,9 @@ namespace OuroborosVandaleriaGame
 
             TitleScreen = new TitleScreen(this, stateManager);
             StartMenuScreen = new StartMenuScreen(this, stateManager);
+            GamePlayScreen = new GamePlayScreen(this, stateManager);
+            OptionsScreen = new OptionsScreen(this, stateManager);
+
             stateManager.ChangeState(TitleScreen);
         }
 

@@ -8,24 +8,20 @@ using Microsoft.Xna.Framework.Content;
 
 namespace OuroborosVandaleriaCore.Engine
 {
-    class Sprite
+    public class Sprite
     {
         private Texture2D texture;
         public Texture2D Texture
         {
-            get
-            {
-                return this.texture;
-            }
+            get { return this.texture; }
+            set { texture = value; }
         }
 
         private Vector2 position;
         public Vector2 Position
         {
-            get
-            {
-                return this.position;
-            }
+            get { return position; }
+            set { position = value; }
         }
 
         public float Rotation;
@@ -33,132 +29,95 @@ namespace OuroborosVandaleriaCore.Engine
         private Vector2 origin;
         public Vector2 Origin
         {
-            get
-            {
-                return this.origin;
-            }
+            get { return origin; }
+            set { origin = value; }
         }
 
         private Rectangle rect;
         public Rectangle Rect
         {
-            get
-            {
-                return this.rect;
-            }
+            get { return rect; }
+            set { rect = value; }
         }
 
         private Vector2 scaleFactor;
         public Vector2 ScaleFactor
         {
-            get
-            {
-                return this.scaleFactor;
-            }
+            get { return scaleFactor; }
+            set { scaleFactor = value; }
         }
 
+        //default constructor
         public Sprite()
         {
-            //this.texture = texture;
             position = Vector2.Zero;
             Rotation = 0.0f;
             origin = Vector2.Zero;
-            rect = new Rectangle(0, 0, texture.Width, texture.Height);
+            rect = new Rectangle(0, 0, 0, 0);
             scaleFactor = Vector2.One;
         }
 
-        public void SetPosition(float x, float y)
+        //constructors
+        public Sprite(Texture2D texture, Vector2 position, Vector2 origin, Vector2 scaleFactor)
         {
-            position.X = x;
-            position.Y = y;
+            Texture = texture;
+            Position = position;
+            Origin = origin;
+            Rect = ScaleSprite(scaleFactor);
         }
 
-        public void SetPosition(Vector2 pos)
+        public Sprite(Texture2D texture, Vector2 origin, Vector2 scaleFactor)
         {
-            position = pos;
+            Texture = texture;
+            Position = position;
+            Origin = origin;
+            Rect = rect;
+            ScaleFactor = scaleFactor;
         }
 
-        public void Move(float deltaX, float deltaY)
+        public Sprite(Texture2D texture, Vector2 origin, float scaleFactor)
         {
-            position.X += deltaX;
-            position.Y += deltaY;
+            Texture = texture;
+            Origin = origin;
+            Rect = ScaleSprite(scaleFactor);
         }
 
-        public void Move(Vector2 deltaPos)
+        public Sprite(Texture2D texture, int originX, int originY, Vector2 scaleFactor)
         {
-            position += deltaPos;
+            Texture = texture;
+            Origin = new Vector2(originX, originY);
+            ScaleFactor = scaleFactor;
+            Rect = ScaleSprite(scaleFactor);
         }
 
-        public void SetOrigin(float x, float y)
+        public Sprite(Texture2D texture, int originX, int originY, float scaleFactor)
         {
-            origin.X += x;
-            origin.Y += y;
+            Texture = texture;
+            Origin = new Vector2(originX, originY);
+            ScaleFactor = new Vector2(scaleFactor, scaleFactor);
+            Rect = ScaleSprite(scaleFactor);
         }
 
-        public void SetOrigin(Vector2 origin)
+        private Rectangle ScaleSprite(Vector2 scaleFactor)
         {
-            this.origin = origin;
+            rect.X *= (int)scaleFactor.X;
+            rect.Y *= (int)scaleFactor.Y;
+            return rect;
         }
 
-        public void SetRect(int x, int y, int width, int height)
+        private Rectangle ScaleSprite(int x, int y)
         {
-            rect.X = x;
-            rect.Y = y;
-            rect.Width = width;
-            rect.Height = height;
+            rect.X *= x;
+            rect.Y *= y;
+            
+            return rect;
         }
 
-        public void SetRect(Rectangle newRect)
+        private Rectangle ScaleSprite(float scaleFactor)
         {
-            rect = newRect;
+            rect.X *= (int)scaleFactor;
+            rect.Y *= (int)scaleFactor;
+            return rect;
         }
-
-        public void SetScale(float x, float y)
-        {
-            scaleFactor.X = x;
-            scaleFactor.Y = y;
-        }
-
-        public void SetScale(float factor)
-        {
-            scaleFactor.X = factor;
-            scaleFactor.Y = factor;
-        }
-
-        public void SetScale(Vector2 factor)
-        {
-            scaleFactor = factor;
-        }
-
-        public void Scale(float x, float y)
-        {
-            scaleFactor.X = x;
-            scaleFactor.Y = y;
-        }
-
-        public void Scale(float factor)
-        {
-            scaleFactor.X = factor;
-            scaleFactor.Y = factor;
-        }
-
-        public void Scale(Vector2 factor)
-        {
-            scaleFactor = factor;
-        }
-
-        public void LoadContent(ContentManager contentManager, string assetName)
-        {
-            texture = contentManager.Load<Texture2D>(assetName);
-        }
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Begin();
-            spriteBatch.Draw(texture, position, rect, Color.White, Rotation, origin, scaleFactor, SpriteEffects.None, 0.0f);
-            spriteBatch.End();
-        }
-
-
     }
 }

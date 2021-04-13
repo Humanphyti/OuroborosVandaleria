@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "OuroborosVandaleriaCore", "OuroborosVandaleriaCore\OuroborosVandaleriaCore.shproj", "{A0CDBD0E-3A41-42B7-9425-A838BC2C7383}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuroborosVandaleria.Windows", "OuroborosVandaleria.Windows\OuroborosVandaleria.Windows.csproj", "{06F908F8-0A8E-40A6-B103-F155531B497B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OuroborosVandaleria.Windows", "OuroborosVandaleria.Windows\OuroborosVandaleria.Windows.csproj", "{06F908F8-0A8E-40A6-B103-F155531B497B}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution

@@ -10,7 +10,7 @@ namespace OuroborosVandaleriaCore.Engine.Controls
 {
     public class LinkLabel : Control
     {
-        Color selectedColor = Color.Red;
+        Color selectedColor = new Color(Color.Gray, 1f);
 
         public Color SelectedColor
         {
@@ -34,9 +34,9 @@ namespace OuroborosVandaleriaCore.Engine.Controls
         public override void Draw(SpriteBatch spriteBatch)
         {
             if (hasFocus)
-                spriteBatch.DrawString(SpriteFont, Text, Position, selectedColor);
+                spriteBatch.Draw(Sprite.Texture, Position, null, selectedColor, 0.0f, Sprite.Origin, Sprite.ScaleFactor, SpriteEffects.None, 0f);
             else
-                spriteBatch.DrawString(SpriteFont, Text, Position, Color);
+                spriteBatch.Draw(Sprite.Texture, Position, null, Color, 0.0f, Sprite.Origin, Sprite.ScaleFactor, SpriteEffects.None, 0f);
         }
 
         public override void HandleInput(PlayerIndex playerIndex)

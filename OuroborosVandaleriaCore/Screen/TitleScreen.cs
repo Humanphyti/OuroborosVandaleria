@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using OuroborosVandaleriaCore.Engine;
 using OuroborosVandaleriaCore.Engine.State;
 using OuroborosVandaleriaCore.Engine.Controls;
 using System;
@@ -13,6 +14,7 @@ namespace OuroborosVandaleriaCore.Screen
     {
         Texture2D backgroundImage;
         LinkLabel startLabel;
+        Sprite pressStartPrompt;
 
         public TitleScreen(Game game, GameStateManager manager) : base(game, manager)
         {
@@ -23,12 +25,16 @@ namespace OuroborosVandaleriaCore.Screen
         {
             ContentManager Content = GameRef.Content;
             backgroundImage = Content.Load<Texture2D>(@"TitleScreen\SPR_titlescreen_bg");
+            Texture2D pressStartTexture = Content.Load<Texture2D>(@"TitleScreen\SPR_titlescreen_button");
             base.LoadContent();
 
+            pressStartPrompt = new Sprite(pressStartTexture, pressStartTexture.Width / 2, pressStartTexture.Height / 2, 3f);
+
             startLabel = new LinkLabel();
-            startLabel.Position = new Vector2(350, 600);
-            startLabel.Text = "Press Enter to Begin";
+            startLabel.Position = new Vector2(GameRef.ScreenRectangle.Width / 2f, GameRef.ScreenRectangle.Height / 1.5f);
+            startLabel.Sprite = pressStartPrompt;
             startLabel.Color = Color.White;
+            startLabel.Size = startLabel.Sprite.Rect;
             startLabel.TabStop = true;
             startLabel.HasFocus = true;
             startLabel.Selected += new EventHandler(startLabel_Selected);
@@ -45,7 +51,7 @@ namespace OuroborosVandaleriaCore.Screen
 
         public override void Draw(GameTime gameTime)
         {
-            GameRef._spriteBatch.Begin();
+            GameRef._spriteBatch.Begin(default, null, SamplerState.PointClamp);
             base.Draw(gameTime);
 
             GameRef._spriteBatch.Draw(backgroundImage, GameRef.ScreenRectangle, Color.White);

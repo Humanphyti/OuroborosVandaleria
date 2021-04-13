@@ -10,6 +10,7 @@
 
 #-------------------------------- References --------------------------------#
 
+/reference:..\..\..\..\..\.nuget\packages\monogame.extended.content.pipeline\3.8.0\tools\MonoGame.Extended.Content.Pipeline.dll
 
 #---------------------------------- Content ---------------------------------#
 
@@ -91,6 +92,16 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:StartMenuScreen/spr_press_start.png
+
+#begin testVillage/testVillage.tmx
+/importer:TiledMapImporter
+/processor:TiledMapProcessor
+/build:testVillage/testVillage.tmx
+
+#begin testVillage/VillageTileset.tsx
+/importer:TiledMapTilesetImporter
+/processor:TiledMapTilesetProcessor
+/build:testVillage/VillageTileset.tsx
 
 #begin TitleScreen/SPR_title_open_sheet.png
 /importer:TextureImporter

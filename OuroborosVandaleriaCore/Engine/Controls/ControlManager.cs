@@ -51,7 +51,7 @@ namespace OuroborosVandaleriaCore.Engine.Controls
 
             if (InputHandler.ButtonPressed(Buttons.DPadUp, playerIndex) || InputHandler.KeyPressed(Keys.Up) || InputHandler.KeyPressed(Keys.W))
                 PreviousControl();
-            if (InputHandler.ButtonPressed(Buttons.DPadUp, playerIndex) || InputHandler.KeyPressed(Keys.Up) || InputHandler.KeyPressed(Keys.W))
+            if (InputHandler.ButtonPressed(Buttons.DPadDown, playerIndex) || InputHandler.KeyPressed(Keys.Down) || InputHandler.KeyPressed(Keys.S))
                 NextControl();
         }
 
@@ -63,6 +63,9 @@ namespace OuroborosVandaleriaCore.Engine.Controls
                     c.Draw(spriteBatch);
             }
         }
+
+        //Events
+        public event EventHandler focusChanged;
 
         public void NextControl()
         {
@@ -81,7 +84,11 @@ namespace OuroborosVandaleriaCore.Engine.Controls
                     selectedControl = 0;
 
                 if (this[selectedControl].TabStop && this[selectedControl].Enabled)
+                {
+                    if (focusChanged != null)
+                        focusChanged(this[selectedControl], null);
                     break;
+                }
             } while (currentControl != selectedControl);
 
             this[selectedControl].HasFocus = true;
@@ -104,7 +111,11 @@ namespace OuroborosVandaleriaCore.Engine.Controls
                     selectedControl = Count - 1;
 
                 if (this[selectedControl].TabStop && this[selectedControl].Enabled)
+                {
+                    if (focusChanged != null)
+                        focusChanged(this[selectedControl], null);
                     break;
+                }
 
             } while (currentControl != selectedControl);
 
