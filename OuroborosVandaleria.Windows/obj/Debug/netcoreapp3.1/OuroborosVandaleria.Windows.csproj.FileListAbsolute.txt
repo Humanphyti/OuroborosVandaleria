@@ -1,0 +1,4 @@
+C:\Users\Eben Schumann\source\repos\OuroborosVandaleriaCore\OuroborosVandaleria.Windows\obj\Debug\netcoreapp3.1\OuroborosVandaleria.Windows.csprojAssemblyReference.cache
+C:\Users\Eben Schumann\source\repos\OuroborosVandaleriaCore\OuroborosVandaleria.Windows\obj\Debug\netcoreapp3.1\OuroborosVandaleria.Windows.AssemblyInfoInputs.cache
+C:\Users\Eben Schumann\source\repos\OuroborosVandaleriaCore\OuroborosVandaleria.Windows\obj\Debug\netcoreapp3.1\OuroborosVandaleria.Windows.AssemblyInfo.cs
+C:\Users\Eben Schumann\source\repos\OuroborosVandaleriaCore\OuroborosVandaleria.Windows\obj\Debug\netcoreapp3.1\OuroborosVandaleria.Windows.csproj.CoreCompileInputs.cache

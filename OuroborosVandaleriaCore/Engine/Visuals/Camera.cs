@@ -9,12 +9,10 @@ using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Renderers;
 
-namespace OuroborosVandaleriaCore.Engine
+namespace OuroborosVandaleriaCore.Engine.Visuals
 {
     public class Camera
     {
-        TiledMap tiledMap;
-        TiledMapRenderer tiledMapRenderer;
         Vector2 position;
         float speed;
 
@@ -30,11 +28,6 @@ namespace OuroborosVandaleriaCore.Engine
         {
             get { return speed; }
             set { speed = (float)MathHelper.Clamp(speed, 1f, 16f); }
-        }
-
-        public TiledMapRenderer TiledMapRenderer
-        {
-            get { return tiledMapRenderer; }
         }
 
         /*public int WidthInPixels
@@ -65,8 +58,7 @@ namespace OuroborosVandaleriaCore.Engine
         //set the bounds of the camera to ensure it doesn't travel beyond the 
         private void CameraLimits()
         {
-            position.X = MathHelper.Clamp(position.X, 0, tiledMap.WidthInPixels - viewportRectangle.Width);
-            position.Y = MathHelper.Clamp(position.Y, 0, tiledMap.HeightInPixels - viewportRectangle.Height);
+
         }
 
         public void Update(GameTime gameTime)
@@ -89,8 +81,6 @@ namespace OuroborosVandaleriaCore.Engine
             position += motion * speed;
 
             CameraLimits();
-
-            tiledMapRenderer.Update(gameTime);
         }
     }
 }
