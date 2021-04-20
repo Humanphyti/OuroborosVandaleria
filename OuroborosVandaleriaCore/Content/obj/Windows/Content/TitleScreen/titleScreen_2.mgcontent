@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/TitleScreen/titleScreen_2.mp4</SourceFile>
-  <SourceTime>2020-09-06T14:43:36.9137724-07:00</SourceTime>
-  <DestFile>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/bin/Windows/Content/TitleScreen/titleScreen_2.xnb</DestFile>
-  <DestTime>2021-03-18T00:37:46.1324433-07:00</DestTime>
+  <SourceFile>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/TitleScreen/titleScreen_2.mp4</SourceFile>
+  <SourceTime>2021-04-19T17:39:16.1175128-07:00</SourceTime>
+  <DestFile>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/bin/Windows/Content/TitleScreen/titleScreen_2.xnb</DestFile>
+  <DestTime>2021-04-19T19:13:12.9744817-07:00</DestTime>
   <Importer>H264Importer</Importer>
   <ImporterTime>2020-08-10T16:17:54-07:00</ImporterTime>
   <Processor>VideoProcessor</Processor>
@@ -11,6 +11,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/bin/Windows/Content/TitleScreen/titleScreen_2.mp4</string>
+    <string>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/bin/Windows/Content/TitleScreen/titleScreen_2.mp4</string>
   </BuildOutput>
 </PipelineBuildEvent>

@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Eben Schumann\\source\\repos\\OuroborosVandaleriaCore\\OuroborosVandaleria.Windows\\OuroborosVandaleria.Windows.csproj": {}
+    "C:\\Users\\human\\Documents\\GitHub\\OuroborosVandaleria\\OuroborosVandaleria.Windows\\OuroborosVandaleria.Windows.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Eben Schumann\\source\\repos\\OuroborosVandaleriaCore\\OuroborosVandaleria.Windows\\OuroborosVandaleria.Windows.csproj": {
+    "C:\\Users\\human\\Documents\\GitHub\\OuroborosVandaleria\\OuroborosVandaleria.Windows\\OuroborosVandaleria.Windows.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eben Schumann\\source\\repos\\OuroborosVandaleriaCore\\OuroborosVandaleria.Windows\\OuroborosVandaleria.Windows.csproj",
+        "projectUniqueName": "C:\\Users\\human\\Documents\\GitHub\\OuroborosVandaleria\\OuroborosVandaleria.Windows\\OuroborosVandaleria.Windows.csproj",
         "projectName": "OuroborosVandaleria.Windows",
-        "projectPath": "C:\\Users\\Eben Schumann\\source\\repos\\OuroborosVandaleriaCore\\OuroborosVandaleria.Windows\\OuroborosVandaleria.Windows.csproj",
-        "packagesPath": "C:\\Users\\Eben Schumann\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eben Schumann\\source\\repos\\OuroborosVandaleriaCore\\OuroborosVandaleria.Windows\\obj\\",
+        "projectPath": "C:\\Users\\human\\Documents\\GitHub\\OuroborosVandaleria\\OuroborosVandaleria.Windows\\OuroborosVandaleria.Windows.csproj",
+        "packagesPath": "C:\\Users\\human\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\human\\Documents\\GitHub\\OuroborosVandaleria\\OuroborosVandaleria.Windows\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Eben Schumann\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\human\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -28,7 +28,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://teamcity.monogame.net/guestAuth/app/nuget/feed/_Root/default/v3/index.json": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -82,7 +81,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
