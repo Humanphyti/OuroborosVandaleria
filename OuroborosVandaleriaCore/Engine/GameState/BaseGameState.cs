@@ -42,7 +42,7 @@ namespace OuroborosVandaleriaCore.Engine.State
 
         public override void Draw(GameTime gameTime)
         {
-            base.Draw(gameTime);
+            base.Draw(gameTime); 
         }
     }
 }

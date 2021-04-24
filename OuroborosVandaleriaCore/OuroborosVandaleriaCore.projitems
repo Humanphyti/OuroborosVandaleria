@@ -23,6 +23,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Visuals\WindowedViewport.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Visuals\FreeformViewport.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Visuals\ViewportAdapter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Maps\Area.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Maps\AreaManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Maps\Map.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OuroborosVandaleria.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\GameState\BaseGameState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\GameState\GameState.cs" />
@@ -34,7 +37,6 @@
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Content\" />
     <Folder Include="$(MSBuildThisFileDirectory)Engine\GameState\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Maps\" />
     <Folder Include="$(MSBuildThisFileDirectory)UserInterface\" />
     <Folder Include="$(MSBuildThisFileDirectory)Serialization\" />
   </ItemGroup>

@@ -4,24 +4,26 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/StartMenuScreen/spr_options.png</File>
-    <File>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/StartMenuScreen/spr_options_gold.png</File>
-    <File>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/StartMenuScreen/spr_play_demo.png</File>
-    <File>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/StartMenuScreen/spr_pointer 1.png</File>
-    <File>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/StartMenuScreen/spr_pointer.png</File>
-    <File>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/StartMenuScreen/spr_press_start.png</File>
-    <File>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/testVillage/testVillage.tmx</File>
-    <File>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/testVillage/VillageTileset.tsx</File>
-    <File>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/TitleScreen/SPR_title_open_sheet.png</File>
-    <File>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/TitleScreen/SPR_titlescreen.png</File>
-    <File>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/TitleScreen/SPR_titlescreen_bg.png</File>
-    <File>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/TitleScreen/SPR_titlescreen_button.png</File>
-    <File>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/TitleScreen/SPR_titlescreen_logo.png</File>
-    <File>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/TitleScreen/SPR_titlescreen_ouroboros.png</File>
-    <File>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/TitleScreen/SPR_titlescreen_vandaleria.png</File>
-    <File>C:/Users/human/Documents/GitHub/OuroborosVandaleria/OuroborosVandaleriaCore/Content/TitleScreen/titleScreen_2.mp4</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/RuinedKing.spritefont</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/StartMenuScreen/spr_options.png</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/StartMenuScreen/spr_options_gold.png</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/StartMenuScreen/spr_play_demo.png</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/StartMenuScreen/spr_pointer 1.png</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/StartMenuScreen/spr_pointer.png</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/StartMenuScreen/spr_press_start.png</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/testVillage/testVillage.tmx</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/testVillage/VillageTileset.tsx</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/TitleScreen/SPR_title_open_sheet.png</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/TitleScreen/SPR_titlescreen.png</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/TitleScreen/SPR_titlescreen_bg.png</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/TitleScreen/SPR_titlescreen_button.png</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/TitleScreen/SPR_titlescreen_logo.png</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/TitleScreen/SPR_titlescreen_ouroboros.png</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/TitleScreen/SPR_titlescreen_vandaleria.png</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/TitleScreen/titleScreen_2.mp4</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-using OuroborosVandaleriaCore.Engine;
+using OuroborosVandaleriaCore.Engine.Visuals;
 using OuroborosVandaleriaGame;
 
 using MonoGame.Extended.Tiled;

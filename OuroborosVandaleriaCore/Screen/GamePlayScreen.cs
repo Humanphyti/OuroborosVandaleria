@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Content;
 using OuroborosVandaleriaCore.Engine;
 using OuroborosVandaleriaCore.Engine.Controls;
 using OuroborosVandaleriaCore.Engine.State;
+using OuroborosVandaleriaCore.Maps;
 using OuroborosVandaleriaCore.CharacterControl;
 
 using MonoGame.Extended.Tiled;
@@ -21,6 +22,8 @@ namespace OuroborosVandaleriaCore.Screen
     {
         ContentManager Content;
         Player player;
+        Area area;
+
 
         //constructor
         public GamePlayScreen(Game game, GameStateManager manager) : base(game, manager)
@@ -51,7 +54,7 @@ namespace OuroborosVandaleriaCore.Screen
 
         public override void Draw(GameTime gameTime)
         {
-            player.Camera.TiledMapRenderer.Draw();
+            //player.Camera.Draw();
             base.Draw(gameTime);
         }
     }
