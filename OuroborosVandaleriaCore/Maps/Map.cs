@@ -10,7 +10,7 @@ using MonoGame.Extended.Tiled.Renderers;
 
 namespace OuroborosVandaleriaCore.Maps
 {
-    public class Map : DrawableGameComponent
+    public class Map
     {
                
     }

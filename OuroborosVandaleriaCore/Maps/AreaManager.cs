@@ -12,7 +12,7 @@ namespace OuroborosVandaleriaCore.Maps
         public Area LoadArea()
         {
             var name = mapFileNames.Dequeue();
-            area = 
+            
             return area;
         }
     }

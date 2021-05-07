@@ -9,6 +9,7 @@
     <Import_RootNamespace>OuroborosVandaleriaCore</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CharacterControl\Actor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CharacterControl\Player.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Visuals\Camera.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Controls\Control.cs" />

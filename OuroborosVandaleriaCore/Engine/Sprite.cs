@@ -47,6 +47,14 @@ namespace OuroborosVandaleriaCore.Engine
             set { scaleFactor = value; }
         }
 
+        private Vector2 spriteMid;
+
+        public Vector2 SpriteMid
+        {
+            get { return spriteMid; }
+            set { spriteMid = value; }
+        }
+
         //default constructor
         public Sprite()
         {
@@ -55,6 +63,7 @@ namespace OuroborosVandaleriaCore.Engine
             origin = Vector2.Zero;
             rect = new Rectangle(0, 0, 0, 0);
             scaleFactor = Vector2.One;
+            SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
         }
 
         //constructors
@@ -64,6 +73,7 @@ namespace OuroborosVandaleriaCore.Engine
             Position = position;
             Origin = origin;
             Rect = ScaleSprite(scaleFactor);
+            SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
         }
 
         public Sprite(Texture2D texture, Vector2 origin, Vector2 scaleFactor)
@@ -73,6 +83,7 @@ namespace OuroborosVandaleriaCore.Engine
             Origin = origin;
             Rect = rect;
             ScaleFactor = scaleFactor;
+            SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
         }
 
         public Sprite(Texture2D texture, Vector2 origin, float scaleFactor)
@@ -80,6 +91,7 @@ namespace OuroborosVandaleriaCore.Engine
             Texture = texture;
             Origin = origin;
             Rect = ScaleSprite(scaleFactor);
+            SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
         }
 
         public Sprite(Texture2D texture, int originX, int originY, Vector2 scaleFactor)
@@ -88,6 +100,7 @@ namespace OuroborosVandaleriaCore.Engine
             Origin = new Vector2(originX, originY);
             ScaleFactor = scaleFactor;
             Rect = ScaleSprite(scaleFactor);
+            SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
         }
 
         public Sprite(Texture2D texture, int originX, int originY, float scaleFactor)
@@ -96,6 +109,7 @@ namespace OuroborosVandaleriaCore.Engine
             Origin = new Vector2(originX, originY);
             ScaleFactor = new Vector2(scaleFactor, scaleFactor);
             Rect = ScaleSprite(scaleFactor);
+            SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
         }
 
         private Rectangle ScaleSprite(Vector2 scaleFactor)

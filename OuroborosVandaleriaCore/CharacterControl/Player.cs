@@ -6,6 +6,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+using OuroborosVandaleriaCore.Engine;
+using OuroborosVandaleriaCore.Engine.State;
 using OuroborosVandaleriaCore.Engine.Visuals;
 using OuroborosVandaleriaGame;
 
@@ -15,26 +17,33 @@ using MonoGame.Extended.Tiled;
 
 namespace OuroborosVandaleriaCore.CharacterControl
 {
-    class Player
+    public class Player : Actor
     {
-        Camera camera;
         OuroborosVandaleria gameRef;
 
-        public Camera Camera
+        Vector2 position;
+        Sprite sprite;
+
+        public Sprite Sprite
         {
-            get { return camera; }
-            set { camera = value; }
+            get { return sprite; }
+            protected set { sprite = value; }
+        }
+
+        public Vector2 Position
+        {
+            get { return position; }
         }
 
         public Player(Game game)
         {
             gameRef = (OuroborosVandaleria)game;
-            camera = new Camera(gameRef.ScreenRectangle);
+
         }
 
         public void Update(GameTime gameTime)
         {
-            camera.Update(gameTime);
+            
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)

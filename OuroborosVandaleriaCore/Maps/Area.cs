@@ -25,17 +25,16 @@ namespace OuroborosVandaleriaCore.Maps
         ContentManager Content;
         List<TiledMap> maps = new List<TiledMap>();
 
-        protected void LoadContent()
+        /*protected void LoadContent()
         {
-
             map = Content.Load<TiledMap>("testVillage/testVillage");
             tiledMapRenderer = new TiledMapRenderer(graphicsDevice, map);
         }
 
-        public Area LoadArea()
+        public void LoadArea()
         {
 
-            return 
-        }
+            return;
+        }*/
     }
 }
