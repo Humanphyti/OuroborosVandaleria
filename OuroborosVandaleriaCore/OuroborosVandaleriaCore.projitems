@@ -10,7 +10,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)CharacterControl\Actor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\AnimatedSprite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\Animation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CharacterControl\Player.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\SpriteSheet.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\TextureRegion2D.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Visuals\Camera.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Controls\Control.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Controls\ControlManager.cs" />
@@ -19,7 +23,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Controls\PictureBox.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\GameState\GameStateManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\InputHandler.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\Sprite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Visuals\WindowViewportAdapter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Visuals\WindowedViewport.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Visuals\FreeformViewport.cs" />
