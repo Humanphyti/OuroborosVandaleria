@@ -4,6 +4,8 @@ using System.Text;
 
 using Microsoft.Xna.Framework;
 
+using OuroborosVandaleriaCore.Engine;
+
 namespace OuroborosVandaleriaCore.Engine.Sprite
 {
     /*
@@ -18,109 +20,91 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
      * Animations, Each AnimationType is a collection of AnimationVariants. The Largest object is the AnimationType.
      *  Ideally this is done during the initialization phase on startup of the game that way the game is only ever pulling from various RAM.
      */
-    public enum AnimationKey
+    /*public enum AnimationKey
     {
         Down,
         Left,
         Right,
         Up
-    }
-    public class Animation : ICloneable
+    }*/
+    public abstract class Animation : IDisposable
     {
-        Rectangle[] frames;
-        int framesPerSecond;
-        TimeSpan frameLength;
-        TimeSpan frameTimer;
-        int currentFrame;
-        int frameWidth;
-        int frameHeight;
 
-        public int FramesPerSecond
+        private readonly bool disposeOnComplete;
+        private readonly Action onCompleteAction;
+        private bool isComplete;
+
+        public bool IsComplete
         {
-            get { return framesPerSecond; }
-            set
+            get { return isComplete; }
+            protected set
             {
-                if (value < 1)
-                    framesPerSecond = 1;
-                else if (value > 60)
-                    framesPerSecond = 60;
-                else
-                    framesPerSecond = value;
-                frameLength = TimeSpan.FromSeconds(1 / (double)framesPerSecond);
+                if (isComplete != value)
+                {
+                    isComplete = value;
+
+                    if (isComplete)
+                    {
+                        onCompleteAction?.Invoke();
+
+                        if (disposeOnComplete)
+                            Dispose();
+                    }
+                }
             }
         }
 
-        public Rectangle CurrentFrameRect
+        public bool IsDisposed { get; protected set; }
+        public bool IsPaused { get; private set; }
+        public bool IsPlaying => !IsPaused && !isComplete;
+        public float CurrentTime { get; protected set; }
+        
+        protected Animation(Action onCompAction, bool disposeOnComp)
         {
-            get { return frames[currentFrame]; }
+            onCompleteAction = onCompAction;
+            disposeOnComplete = disposeOnComp;
+            IsPaused = false;
         }
 
-        public int CurrentFrame
+        public virtual void Dispose()
         {
-            get { return currentFrame; }
-            set
-            {
-                currentFrame = (int)MathHelper.Clamp(value, 0, frames.Length - 1);
-            }
+            IsDisposed = true;
         }
 
-        public int FrameWidth
+        public void Play()
         {
-            get { return frameWidth; }
+            IsPaused = false;
         }
 
-        public int FrameHeight
+        public void Pause()
         {
-            get { return frameHeight; }
+            IsPaused = true;
+        }
+
+        public void Stop()
+        {
+            Pause();
+            Rewind();
+        }
+
+        public void Rewind()
+        {
+            CurrentTime = 0;
+        }
+
+        protected abstract bool OnUpdate(float delatTime);
+
+        public void Update(float deltaTime)
+        {
+            if (!IsPlaying)
+                return;
+            CurrentTime += deltaTime;
+            IsComplete = OnUpdate(deltaTime);
         }
 
         public void Update(GameTime gameTime)
         {
-            frameTimer += gameTime.ElapsedGameTime;
-
-            if(frameTimer >= frameLength)
-            {
-                frameTimer = TimeSpan.Zero;
-                currentFrame = (currentFrame + 1) % frames.Length;
-            }
+            Update(gameTime.GetEleapsedSeconds());
         }
-
-        public void Reset()
-        {
-            currentFrame = 0;
-            frameTimer = TimeSpan.Zero;
-        }
-
-        public Animation(int frameCount, int frameWidth, int frameHeight, int xOffset, int yOffset)
-        {
-            frames = new Rectangle[frameCount];
-            this.frameWidth = frameWidth;
-            this.frameHeight = FrameHeight;
-
-            for (int i = 0; i < frameCount; i++)
-            {
-                frames[i] = new Rectangle(xOffset + (frameWidth * i), yOffset, frameWidth, frameHeight);
-            }
-            FramesPerSecond = 8;
-            Reset();
-        }
-
-        private Animation(Animation animation)
-        {
-            this.frames = animation.frames;
-            FramesPerSecond = 8;
-        }
-
-        public object Clone()
-        {
-            Animation animationClone = new Animation(this);
-
-            animationClone.frameWidth = this.frameWidth;
-            animationClone.frameHeight = this.frameHeight;
-            animationClone.Reset();
-
-            return animationClone;
-        }
-
     }
 }

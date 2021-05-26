@@ -10,10 +10,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)CharacterControl\Actor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\GameTimeExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\AnimatedSprite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\Animation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CharacterControl\Player.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\SpriteSheet.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\SpriteSheetAnimation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\TextureRegion2D.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Visuals\Camera.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Controls\Control.cs" />
