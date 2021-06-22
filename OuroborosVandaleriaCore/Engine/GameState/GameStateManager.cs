@@ -4,12 +4,12 @@ using System.Text;
 
 using Microsoft.Xna.Framework;
 
-namespace OuroborosVandaleriaCore.Engine.State
+namespace OuroborosVandaleriaCore.Engine.GameState
 {
-    public class GameStateManager : GameComponent
+    public class GameStateManager
     {
         //Event that all game states subscribe to
-        public EventHandler OnStateChange;
+        /*public EventHandler OnStateChange;
 
         Stack<GameState> gameStates = new Stack<GameState>();
 
@@ -90,6 +90,6 @@ namespace OuroborosVandaleriaCore.Engine.State
 
             if (OnStateChange != null)
                 OnStateChange(this, null);
-        }
+        }*/
     }
 }

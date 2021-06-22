@@ -93,6 +93,30 @@
 /processorParam:TextureFormat=Color
 /build:StartMenuScreen/spr_press_start.png
 
+#begin TestAudio/1-Dark Fantasy Studio- Before the dawn (seamless).wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:TestAudio/1-Dark Fantasy Studio- Before the dawn (seamless).wav
+
+#begin TestAudio/2-Dark Fantasy Studio- A new day begins (seamless).wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:TestAudio/2-Dark Fantasy Studio- A new day begins (seamless).wav
+
+#begin TestAudio/3-Dark Fantasy Studio- Over the world (seamless).wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:TestAudio/3-Dark Fantasy Studio- Over the world (seamless).wav
+
+#begin TestAudio/5-Dark Fantasy Studio- With the wind (seamless).wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:TestAudio/5-Dark Fantasy Studio- With the wind (seamless).wav
+
 #begin testVillage/testVillage.tmx
 /importer:TiledMapImporter
 /processor:TiledMapProcessor

@@ -1,9 +1,16 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Input;
+
 using OuroborosVandaleriaCore.Engine;
-using OuroborosVandaleriaCore.Engine.State;
-using OuroborosVandaleriaCore.Engine.Controls;
+using OuroborosVandaleriaCore.Engine.GameState;
+using OuroborosVandaleriaCore.Engine.UI;
+using OuroborosVandaleriaCore.Engine.Input;
+using OuroborosVandaleriaCore.Engine.Sprite;
+
+using OuroborosVandaleriaCore.GameObjects;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,14 +21,43 @@ namespace OuroborosVandaleriaCore.Screen
     {
         Texture2D backgroundImage;
         LinkLabel startLabel;
-        Sprite pressStartPrompt;
 
-        public TitleScreen(Game game, GameStateManager manager) : base(game, manager)
+        public override void HandleInput()
+        {
+            InputManager.GetCommands(cmd =>
+            {
+                if(cmd is TitleInputCommand.GameSelect)
+                {
+                    SwitchState(new StartMenuScreen());
+                }
+            });
+        }
+
+        public override void LoadContent()
+        {
+            //AddGameObject(new BaseGameObject(LoadTexture("TitleScreen/SPR_titlescreen_bg")));
+
+        }
+
+        public override void UpdateGameState(GameTime gameTime)
+        {
+            
+        }
+
+        protected override void SetInputManager()
+        {
+            InputManager = new InputManager(new TitleInputMapper());
+        }
+        //Sprite pressStartPrompt;
+
+
+
+        /*public TitleScreen(Game game, GameStateManager manager)
         {
 
         }
 
-        protected override void LoadContent()
+        protected override void LoadContent(ContentManager contentManager)
         {
             ContentManager Content = GameRef.Content;
             backgroundImage = Content.Load<Texture2D>(@"TitleScreen\SPR_titlescreen_bg");
@@ -96,5 +132,6 @@ namespace OuroborosVandaleriaCore.Screen
             spriteBatch.DrawString(font, "Hello, Sailor", new Vector2(100, 100), Color.Black);
 
             base.Draw(spriteBatch);
-        }
-    }*/
+        }*/
+    }
+}

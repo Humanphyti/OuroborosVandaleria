@@ -10,6 +10,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)CharacterControl\Actor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Audio\SoundManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Emitters\ConeEmitterType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Emitters\Emitter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Emitters\IEmitterType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Events\GamePlayEvents.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\GameState\BaseGameStateEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Input\BaseInputCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Input\BaseInputMapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Input\GameplayInputCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Input\GameplayInputMapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Input\InputManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Input\TitleInputCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Input\TitleInputMapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Particles\EmbersParticleState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Particles\EmitterParticleState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Particles\Particle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\RandomNumberGenerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\BaseGameObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\GameTimeExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\AnimatedSprite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\Animation.cs" />
@@ -17,25 +35,21 @@
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\SpriteSheet.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\SpriteSheetAnimation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\TextureRegion2D.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\Visuals\Camera.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\Controls\Control.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\Controls\ControlManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\Controls\Label.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\Controls\LinkLabel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\Controls\PictureBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\UI\Control.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\UI\ControlManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\UI\Label.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\UI\LinkLabel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\UI\PictureBox.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\GameState\GameStateManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\InputHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\Sprite.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\Visuals\WindowViewportAdapter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\Visuals\WindowedViewport.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\Visuals\FreeformViewport.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\Visuals\ViewportAdapter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Maps\Area.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Maps\AreaManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Maps\Map.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\RangedSpell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Maps\GameMap.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OuroborosVandaleria.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\GameState\BaseGameState.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\GameState\GameState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screen\Dev\DevInputCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screen\Dev\DevInputMapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screen\Dev\DevScreen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Screen\GamePlayScreen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Screen\OptionsScreen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Screen\StartMenuScreen.cs" />
@@ -43,7 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Content\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Engine\GameState\" />
     <Folder Include="$(MSBuildThisFileDirectory)UserInterface\" />
     <Folder Include="$(MSBuildThisFileDirectory)Serialization\" />
   </ItemGroup>

@@ -27,7 +27,13 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
             set { position = value; }
         }
 
-        public float Rotation;
+        private float rotation;
+
+        public float Rotation
+        {
+            get { return rotation; }
+            protected set { rotation = value; }
+        }
 
         private Vector2 origin;
         public Vector2 Origin
@@ -43,8 +49,8 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
             set { rect = value; }
         }
 
-        private Vector2 scaleFactor;
-        public Vector2 ScaleFactor
+        private float scaleFactor;
+        public float ScaleFactor
         {
             get { return scaleFactor; }
             set { scaleFactor = value; }
@@ -62,15 +68,15 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
         public Sprite()
         {
             position = Vector2.Zero;
-            Rotation = 0.0f;
+            rotation = 0.0f;
             origin = Vector2.Zero;
             rect = new Rectangle(0, 0, 0, 0);
-            scaleFactor = Vector2.One;
+            scaleFactor = 1;
             SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
         }
 
         //constructors
-        public Sprite(Texture2D texture, Vector2 position, Vector2 origin, Vector2 scaleFactor)
+        public Sprite(Texture2D texture, Vector2 position, Vector2 origin, float scaleFactor)
         {
             Texture = texture;
             Position = position;
@@ -79,7 +85,7 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
             SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
         }
 
-        public Sprite(Texture2D texture, Vector2 origin, Vector2 scaleFactor)
+        public Sprite(Texture2D texture, Vector2 origin, float scaleFactor)
         {
             Texture = texture;
             Position = position;
@@ -89,15 +95,7 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
             SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
         }
 
-        public Sprite(Texture2D texture, Vector2 origin, float scaleFactor)
-        {
-            Texture = texture;
-            Origin = origin;
-            Rect = ScaleSprite(scaleFactor);
-            SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
-        }
-
-        public Sprite(Texture2D texture, int originX, int originY, Vector2 scaleFactor)
+        public Sprite(Texture2D texture, int originX, int originY, float scaleFactor)
         {
             Texture = texture;
             Origin = new Vector2(originX, originY);
@@ -106,19 +104,21 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
             SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
         }
 
-        public Sprite(Texture2D texture, int originX, int originY, float scaleFactor)
+        public Sprite(Texture2D texture)
         {
             Texture = texture;
-            Origin = new Vector2(originX, originY);
-            ScaleFactor = new Vector2(scaleFactor, scaleFactor);
-            Rect = ScaleSprite(scaleFactor);
+            position = Vector2.Zero;
+            Rotation = 0.0f;
+            origin = Vector2.Zero;
+            rect = new Rectangle(0, 0, 0, 0);
+            scaleFactor = 1;
             SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
         }
 
-        private Rectangle ScaleSprite(Vector2 scaleFactor)
+        private Rectangle ScaleSprite(float scaleFactor)
         {
-            rect.X *= (int)scaleFactor.X;
-            rect.Y *= (int)scaleFactor.Y;
+            rect.X *= (int)scaleFactor;
+            rect.Y *= (int)scaleFactor;
             return rect;
         }
 
@@ -127,13 +127,6 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
             rect.X *= x;
             rect.Y *= y;
             
-            return rect;
-        }
-
-        private Rectangle ScaleSprite(float scaleFactor)
-        {
-            rect.X *= (int)scaleFactor;
-            rect.Y *= (int)scaleFactor;
             return rect;
         }
 

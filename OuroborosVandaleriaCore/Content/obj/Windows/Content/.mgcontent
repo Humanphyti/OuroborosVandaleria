@@ -11,6 +11,10 @@
     <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/StartMenuScreen/spr_pointer 1.png</File>
     <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/StartMenuScreen/spr_pointer.png</File>
     <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/StartMenuScreen/spr_press_start.png</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/TestAudio/1-Dark Fantasy Studio- Before the dawn (seamless).wav</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/TestAudio/2-Dark Fantasy Studio- A new day begins (seamless).wav</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/TestAudio/3-Dark Fantasy Studio- Over the world (seamless).wav</File>
+    <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/TestAudio/5-Dark Fantasy Studio- With the wind (seamless).wav</File>
     <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/testVillage/testVillage.tmx</File>
     <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/testVillage/VillageTileset.tsx</File>
     <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/TitleScreen/SPR_title_open_sheet.png</File>
@@ -23,6 +27,10 @@
     <File>C:/Users/Eben Schumann/source/repos/OuroborosVandaleriaCore/OuroborosVandaleriaCore/Content/TitleScreen/titleScreen_2.mp4</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

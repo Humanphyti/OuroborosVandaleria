@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-using OuroborosVandaleriaCore.Engine.Visuals;
+using OuroborosVandaleriaCore.Engine;
 
 using MonoGame.Extended.Tiled;
 
@@ -13,7 +13,7 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
 {
     public class AnimatedSprite : Sprite
     {
-        Dictionary<AnimationKey, Animation> animations;
+        /*Dictionary<AnimationKey, Animation> animations;
         AnimationKey currentAnimation;
         bool isAnimating;
         Sprite sprite;
@@ -87,7 +87,7 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
         public override void LockToMap()
         {
             base.LockToMap();
-        }
+        }*/
     }
 }
 

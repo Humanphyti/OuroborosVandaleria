@@ -6,9 +6,10 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
-using OuroborosVandaleriaCore.Engine.State;
+using OuroborosVandaleriaCore.Engine.GameState;
 using OuroborosVandaleriaCore.Engine;
-using OuroborosVandaleriaCore.Engine.Controls;
+using OuroborosVandaleriaCore.Engine.Sprite;
+using OuroborosVandaleriaCore.Engine.UI;
 
 namespace OuroborosVandaleriaCore.Screen
 {
@@ -24,19 +25,13 @@ namespace OuroborosVandaleriaCore.Screen
         float maxItemWidth = 0f;
 
         //Constructor
-        public StartMenuScreen(Game game, GameStateManager manager) : base(game, manager)
+        public StartMenuScreen()
         {
         }
 
-        public override void Initialize()
+        public override void LoadContent()
         {
-            base.Initialize();
-        }
-
-        protected override void LoadContent()
-        {
-            ContentManager Content = Game.Content;
-            backgroundImage = new PictureBox(Content.Load<Texture2D>(@"TitleScreen/SPR_titlescreen_bg"), GameRef.ScreenRectangle);
+            /*backgroundImage = new PictureBox(Content.Load<Texture2D>(@"TitleScreen/SPR_titlescreen_bg"), GameRef.ScreenRectangle);
             
 
             Texture2D startGameTexture = Content.Load<Texture2D>(@"StartMenuScreen\spr_play_demo");
@@ -107,22 +102,18 @@ namespace OuroborosVandaleriaCore.Screen
             }*/
         }
 
-        public override void Update(GameTime gameTime)
+        public override void HandleInput()
         {
-            ControlManager.Update(gameTime, playerIndexInControl);
-
-            base.Update(gameTime);
         }
 
-        public override void Draw(GameTime gameTime)
+        public override void UpdateGameState(GameTime gameTime)
         {
-            GameRef._spriteBatch.Begin();
+            
+        }
 
-            base.Draw(gameTime);
-
-            ControlManager.Draw(GameRef._spriteBatch);
-
-            GameRef._spriteBatch.End();
+        protected override void SetInputManager()
+        {
+            
         }
     }
 }

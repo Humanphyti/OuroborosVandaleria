@@ -7,36 +7,35 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 using OuroborosVandaleriaCore.Engine;
-using OuroborosVandaleriaCore.Engine.State;
+using OuroborosVandaleriaCore.Engine.GameState;
 
 namespace OuroborosVandaleriaCore.Screen
 {
     public class OptionsScreen : BaseGameState
     {
-        public OptionsScreen(Game game, GameStateManager manager) : base(game, manager)
+        public OptionsScreen()
         {
 
         }
 
-        //override methods
-        public override void Initialize()
+        public override void HandleInput()
         {
-            base.Initialize();
+            
         }
 
-        protected override void LoadContent()
+        public override void LoadContent()
         {
-            base.LoadContent();
+            
         }
 
-        public override void Update(GameTime gameTime)
+        public override void UpdateGameState(GameTime gameTime)
         {
-            base.Update(gameTime);
+            
         }
 
-        public override void Draw(GameTime gameTime)
+        protected override void SetInputManager()
         {
-            base.Draw(gameTime);
+            
         }
     }
 }

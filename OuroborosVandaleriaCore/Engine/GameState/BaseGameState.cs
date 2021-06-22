@@ -1,48 +1,118 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using OuroborosVandaleriaGame;
-using OuroborosVandaleriaCore.Engine.Controls;
-using OuroborosVandaleriaCore.Engine.State;
+using System.Linq;
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Audio;
 
-namespace OuroborosVandaleriaCore.Engine.State
+using MonoGame.Extended.Tiled;
+using MonoGame.Extended.Tiled.Renderers;
+
+using OuroborosVandaleriaCore.Engine.Sprite;
+using OuroborosVandaleriaCore.Engine.Input;
+using OuroborosVandaleriaCore.Engine.Audio;
+
+using OuroborosVandaleriaCore.GameObjects;
+
+namespace OuroborosVandaleriaCore.Engine.GameState
 {
-    public abstract partial class BaseGameState : GameState
+    public abstract class BaseGameState
     {
-        protected OuroborosVandaleria GameRef;
+        private readonly List<BaseGameObject> _gameObjects = new List<BaseGameObject>();
 
-        protected ControlManager ControlManager;
+        private const string FallbackTexture = "BaseBackground";
 
-        protected PlayerIndex playerIndexInControl;
+        private ContentManager _contentManager;
+        protected int _viewportWidth;
+        protected int _viewportHeight;
 
-        public BaseGameState (Game game, GameStateManager manager) : base (game, manager)
+        protected InputManager InputManager { get; set; }
+        protected SoundManager _soundManager = new SoundManager();
+
+        public abstract void LoadContent();
+        public abstract void UpdateGameState(GameTime gameTime);
+        public event EventHandler<BaseGameState> OnStateSwitched;
+        public event EventHandler<BaseGameStateEvent> OnEventNotification;
+        protected abstract void SetInputManager();
+        public abstract void HandleInput();
+
+        public void UnloadContent(ContentManager contentManager)
         {
-            GameRef = (OuroborosVandaleria)game;
-
-            playerIndexInControl = PlayerIndex.One;
+            _contentManager.Unload();
         }
 
-        protected override void LoadContent()
+        public void UnloadContent()
         {
-            ContentManager Content = Game.Content;
-
-            SpriteFont gameFont = Content.Load<SpriteFont>(@"RuinedKing");
-            ControlManager = new ControlManager(gameFont);
-
-            base.LoadContent();
+            _contentManager.Unload();
         }
 
-        public override void Update(GameTime gameTime)
+        public void Initialize(ContentManager contentManager, int viewportWidth, int viewportHeight)
         {
-            base.Update(gameTime);
+            _contentManager = contentManager;
+            _viewportHeight = viewportHeight;
+            _viewportWidth = viewportWidth;
+
+            SetInputManager();
         }
 
-        public override void Draw(GameTime gameTime)
+        public void Update(GameTime gameTime) 
         {
-            base.Draw(gameTime); 
+            UpdateGameState(gameTime);
+            _soundManager.PlaySoundtrack();
+        }
+
+        protected Texture2D LoadTexture(string assetName)
+        {
+            return _contentManager.Load<Texture2D>(FallbackTexture);
+        }
+
+        public TiledMap LoadMap(string mapName, GraphicsDevice graphicsDevice)
+        {
+            var map = _contentManager.Load<TiledMap>(mapName);
+            return map ?? _contentManager.Load<TiledMap>(FallbackTexture);
+        }
+
+        protected SoundEffect LoadSound(string soundName)
+        {
+            return _contentManager.Load<SoundEffect>(soundName);
+        }
+
+        protected void NotifyEvent(BaseGameStateEvent eventType)
+        {
+            OnEventNotification?.Invoke(this, eventType);
+
+            foreach(var gameObject in _gameObjects)
+            {
+                gameObject.OnNotify(eventType);
+            }
+
+            _soundManager.OnNotify(eventType);
+        }
+
+        protected void SwitchState(BaseGameState gameState)
+        {
+            OnStateSwitched?.Invoke(this, gameState);
+        }
+
+        protected void AddGameObject(BaseGameObject gameObject)
+        {
+            _gameObjects.Add(gameObject);
+        }
+
+        protected void RemoveGameObject(BaseGameObject gameObject)
+        {
+            _gameObjects.Remove(gameObject);
+        }
+
+        public void Render(SpriteBatch spriteBatch)
+        {
+            foreach (var gameObject in _gameObjects.OrderBy(a => a.zIndex))
+            {
+                gameObject.Render(spriteBatch);
+            }
         }
     }
 }
