@@ -14,12 +14,17 @@ using OuroborosVandaleriaCore.Engine.GameState;
 using OuroborosVandaleriaCore.Engine.Sprite;
 using OuroborosVandaleriaCore.Engine.Events;
 using OuroborosVandaleriaCore.Engine.Input;
+using OuroborosVandaleriaCore.Engine.Particles;
+using OuroborosVandaleriaCore.Engine.Collisions;
 
+using OuroborosVandaleriaCore.Spawners;
 using OuroborosVandaleriaCore.Maps;
 using OuroborosVandaleriaCore.CharacterControl;
 using OuroborosVandaleriaCore.GameObjects;
 
 using OuroborosVandaleriaGame;
+
+using System.Threading.Tasks;
 
 
 namespace OuroborosVandaleriaCore.Screen
@@ -29,34 +34,63 @@ namespace OuroborosVandaleriaCore.Screen
         //Asset Names
         private const string PlayerCharacter = "Player";
         private const string BackgroundTexture = "Map";
+        private const string StabTexture = "Stab";
         private const string SpellTexture = "Spell";
+        private const string ExplosionTexture = "Explosion";
+        private const string EmbersTexture = "Embers";
+        private const string WolfTexture = "Wolf";
 
-        //Object instantiation
+        private const int MaxExplosionAge = 600;
+        private const int ExplosionActiveLength = 75;
+
+        private Texture2D _stabTexture;
+        private Texture2D _spellTexture;
+        private Texture2D _embersTexture;
+        private Texture2D _explosionTexture;
+        private Texture2D _wolfTexture;
+        
         private Player _player;
-        private RangedSpell _rangedSpell;
+        private bool _playerDead;
 
-        private List<RangedSpell> _rangedSpells;
         private bool _isCasting;
+        private bool _isStabbing;
         private TimeSpan _lastCastAt;
+        private TimeSpan _lastStabAt;
+
+        private List<RangedSpell> _rangedSpells = new List<RangedSpell>();
+        private List<ExplosionEmitter> _explosionList = new List<ExplosionEmitter>();
+        private List<Wolf> _wolfList = new List<Wolf>();
+        private List<StabAttack> _stabAttacks = new List<StabAttack>();
+
+        private StabAttack _stabAttack;
+        private RangedSpell _rangedSpell;
+        private WolfGenerator _wolfGenerator;
 
         public override void LoadContent()
         {
+            _stabTexture = LoadTexture(StabTexture);
+            _explosionTexture = LoadTexture(PlayerCharacter);
+            _spellTexture = LoadTexture(SpellTexture);
+            _embersTexture = LoadTexture(EmbersTexture);
+            _wolfTexture = LoadTexture(WolfTexture);
+
             _player = new Player(LoadTexture(PlayerCharacter));
-            _rangedSpell = new RangedSpell(LoadTexture(SpellTexture));
-            _rangedSpells = new List<RangedSpell>();
-
-            var playerXPos = _viewportWidth / 2 - _player.Sprite.Texture.Width / 2;
-            var playerYPos = _viewportHeight / 2 - _player.Sprite.Texture.Height - 30;
-            _player.Sprite.Position = new Vector2(playerXPos, playerYPos);
-
-            var track1 = LoadSound("TestAudio/1-Dark Fantasy Studio- Before the dawn (seamless)").CreateInstance();
-            var track2 = LoadSound("TestAudio / 3 - Dark Fantasy Studio - Over the world(seamless)").CreateInstance();
-            _soundManager.SetSoundtrack(new List<SoundEffectInstance>() { track1, track2 });
-
-            var spellSound = LoadSound("TestAudio/3-Dark Fantasy Studio- Over the world (seamless)");
-            _soundManager.RegisterSound(new GamePlayEvents.PlayerCasts(), spellSound);
 
             //AddGameObject(new GameMap());
+
+            //var playerXPos = _viewportWidth / 2 - _player.Sprite.Texture.Width / 2;
+            //var playerYPos = _viewportHeight / 2 - _player.Sprite.Texture.Height - 30;
+            //_player.Sprite.Position = new Vector2(playerXPos, playerYPos);
+
+            var spellSound = LoadSound("TestAudio/1-Dark Fantasy Studio- Before the dawn (seamless)");
+            var attackSound = LoadSound("TestAudio / 3 - Dark Fantasy Studio - Over the world(seamless)");
+            _soundManager.RegisterSound(new GamePlayEvents.PlayerCasts(), spellSound);
+            _soundManager.RegisterSound(new GamePlayEvents.PlayerAttacks(), attackSound);
+
+            var track1 = LoadSound("TestAudio/3-Dark Fantasy Studio- Over the world (seamless)").CreateInstance();
+            _soundManager.SetSoundtrack(new List<SoundEffectInstance>() { track1 });
+
+            ResetGame();
         }
 
         public override void UpdateGameState(GameTime gameTime)
@@ -66,23 +100,68 @@ namespace OuroborosVandaleriaCore.Screen
                 spell.MoveUp();
             }
 
-            if(_lastCastAt != null && gameTime.TotalGameTime - _lastCastAt > TimeSpan.FromSeconds(0.2))
+            foreach(var wolf in _wolfList)
+            {
+                wolf.Update();
+            }
+
+            UpdateExplosions(gameTime);
+            RegulateAttackingRate(gameTime);
+            DetectCollisions();
+
+            _rangedSpells = CleanObjects(_rangedSpells);
+            _wolfList = CleanObjects(_wolfList);
+        }
+
+        private void RegulateAttackingRate(GameTime gameTime)
+        {
+            if (_lastCastAt != null && gameTime.TotalGameTime - _lastCastAt > TimeSpan.FromSeconds(1.0))
             {
                 _isCasting = false;
             }
 
-            var newSpellList = new List<RangedSpell>();
-            foreach(var spell in _rangedSpells)
+            if (_lastStabAt != null && gameTime.TotalGameTime - _lastStabAt > TimeSpan.FromSeconds(0.2))
             {
-                var spellStillOnScreen = spell.Sprite.Position.Y > -30;
-                if (spellStillOnScreen)
+                _isStabbing = false;
+            }
+        }
+
+        private void DetectCollisions()
+        {
+            var rangedSpellCollisionDetector = new AABBCollisionDetector<RangedSpell, Wolf>(_rangedSpells);
+            //var aoeSpellCollisionDetector = new AABBCollisionDetector<AoeSpell, Wolf>(_aoeSpells);
+            var stabCollisionDetector = new AABBCollisionDetector<StabAttack, Wolf>(_stabAttacks);
+            var playerCollisionDetector = new AABBCollisionDetector<Wolf, Player>(_wolfList);
+
+            rangedSpellCollisionDetector.DetectCollisions(_wolfList, (spell, wolf) =>
+            {
+                var hitEvent = new GamePlayEvents.ActorHitBy(spell);
+                wolf.OnNotify(hitEvent);
+                _soundManager.OnNotify(hitEvent);
+                wolf.Destroy();
+            });
+
+            stabCollisionDetector.DetectCollisions(_wolfList, (stab, wolf) =>
+            {
+                var hitEvent = new GamePlayEvents.ActorHitBy(stab);
+                wolf.OnNotify(hitEvent);
+                wolf.Destroy();
+            });
+
+            /*aoeSpellCollisionDetector.DetectCollisions(_wolfList, (spell, wolf) =>
+            {
+                var hitEvent = new GamePlayEvents.ActorHitBy(spell);
+                wolf.OnNotify(wolf);
+                _soundManager.OnNotify(hitEvent);
+                wolf.Destroy();
+            });*/
+
+            if (!_playerDead)
+            {
+                playerCollisionDetector.DetectCollisions(_player, (wolf, player) =>
                 {
-                    newSpellList.Add(spell);
-                }
-                else
-                {
-                    RemoveGameObject(spell);
-                }
+                    KillPlayer();
+                });
             }
         }
 
@@ -108,7 +187,7 @@ namespace OuroborosVandaleriaCore.Screen
                         //_player.Attack();
                         break;
                     case GameplayInputCommand.SpellAttack:
-                        //_player.SpellAttack();
+                        //Cast();
                         break;
                     case GameplayInputCommand.Sprint:
                         //_player.IsSprinting();
@@ -162,13 +241,38 @@ namespace OuroborosVandaleriaCore.Screen
             }
         }
 
+        private async void KillPlayer()
+        {
+            _playerDead = true;
+
+            RemoveGameObject(_player);
+
+            await Task.Delay(TimeSpan.FromSeconds(2));
+            ResetGame();
+        }
+
         private void Cast(GameTime gameTime)
         {
-            CreateSpell();
-            _isCasting = true;
-            _lastCastAt = gameTime.TotalGameTime;
+            if (!_isCasting)
+            {
+                CreateSpell();
+                _isCasting = true;
+                _lastCastAt = gameTime.TotalGameTime;
 
-            NotifyEvent(new GamePlayEvents.PlayerCasts());
+                NotifyEvent(new GamePlayEvents.PlayerCasts());
+            }
+        }
+
+        private void Stab(GameTime gameTime)
+        {
+            if (!_isStabbing)
+            {
+                CreateStab();
+                _isStabbing = true;
+                _lastStabAt = gameTime.TotalGameTime;
+
+                NotifyEvent(new GamePlayEvents.PlayerAttacks());
+            }
         }
 
         private void CreateSpell()
@@ -186,5 +290,125 @@ namespace OuroborosVandaleriaCore.Screen
             _rangedSpells.Add(spellSpriteLeft);
             _rangedSpells.Add(spellSpriteRight);
         }
+
+        private void CreateStab()
+        {
+            var stabSpriteLeft = new StabAttack(_stabAttack);
+            var stabSpriteRight = new StabAttack(_stabAttack);
+
+            var stabY = _player.Sprite.Position.Y + 30;
+            var stabLeftX = _player.Sprite.Position.X + _player.Sprite.Texture.Width / 2 - 40;
+            var stabRightX = _player.Sprite.Position.X + _player.Sprite.Texture.Width / 2 + 10;
+            stabSpriteLeft.Sprite.Position = new Vector2(stabLeftX, stabY);
+            stabSpriteRight.Sprite.Position = new Vector2(stabRightX, stabY);
+
+            //probably the combo logic goes here
+        }
+
+        private void ResetGame()
+        {
+            if(_wolfGenerator != null)
+            {
+                _wolfGenerator.StopGenerating();
+            }
+
+            foreach(var spell in _rangedSpells)
+            {
+                RemoveGameObject(spell);
+            }
+
+            foreach(var wolf in _wolfList)
+            {
+                RemoveGameObject(wolf);
+            }
+
+            foreach(var explosion in _explosionList)
+            {
+                RemoveGameObject(explosion);
+            }
+
+            _rangedSpells = new List<RangedSpell>();
+            _wolfList = new List<Wolf>();
+            _explosionList = new List<ExplosionEmitter>();
+
+            _wolfGenerator = new WolfGenerator(_wolfTexture, 4, AddWolf);
+            _wolfGenerator.GenerateWolves();
+
+            AddGameObject(_player);
+
+            var playerXPos = _viewportWidth / 2 - _player.Width / 2;
+            var playerYPos = _viewportHeight / 2 - _player.Height - 30;
+            _player.Position = new Vector2(playerXPos, playerYPos);
+
+            _playerDead = false;
+        }
+
+        private void AddWolf(Wolf wolf)
+        {
+            wolf.OnObjectChanged += _wolf_OnObjectChanged;
+            _wolfList.Add(wolf);
+            AddGameObject(wolf);
+        }
+
+        private void _wolf_OnObjectChanged(object sender, BaseGameStateEvent e)
+        {
+            var wolf = (Wolf)sender;
+            switch (e)
+            {
+                case GamePlayEvents.EnemyDie ge:
+                    if(ge.CurrentLife <= 0)
+                    {
+                        AddExplosion(new Vector2(wolf.Position.X - 40, wolf.Position.Y - 40));
+                        wolf.Destroy();
+                    }
+                    break;
+            }
+        }
+
+        private void AddExplosion(Vector2 position)
+        {
+            var explosion = new ExplosionEmitter(_explosionTexture, position);
+            AddGameObject(explosion);
+            _explosionList.Add(explosion);
+        }
+
+        private void UpdateExplosions(GameTime gameTime)
+        {
+            foreach (var explosion in _explosionList)
+            {
+                explosion.Update(gameTime);
+
+                if (explosion.Age > ExplosionActiveLength)
+                {
+                    explosion.Deactivate();
+                }
+
+                if(explosion.Age > MaxExplosionAge)
+                {
+                    explosion.Deactivate();
+                }
+            }
+        }
+
+        private List<T> CleanObjects<T>(List<T> objectList) where T : BaseGameObject
+        {
+            List<T> listOfItemsToKeep = new List<T>();
+            foreach(T item in objectList)
+            {
+                var offScreen = item.Position.Y < -50;
+
+                if(offScreen || item.Destroyed)
+                {
+                    RemoveGameObject(item);
+                }
+                else
+                {
+                    listOfItemsToKeep.Add(item);
+                }
+            }
+
+            return listOfItemsToKeep;
+        }
+
     }
 }

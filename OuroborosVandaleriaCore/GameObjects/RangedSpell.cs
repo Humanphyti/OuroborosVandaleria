@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace OuroborosVandaleriaCore.GameObjects
 {
-    public class RangedSpell : BaseGameObject
+    public class RangedSpell : BaseGameObject, IGameObjectWithDamage
     {
         private const float SPELL_SPEED = 10.0f;
 
@@ -18,6 +18,8 @@ namespace OuroborosVandaleriaCore.GameObjects
             get { return _sprite; }
             private set { _sprite = value; }
         }
+
+        public int Damage => 0;
 
         public RangedSpell(Sprite sprite)
         {

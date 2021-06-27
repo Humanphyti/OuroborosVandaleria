@@ -24,6 +24,7 @@ namespace OuroborosVandaleriaCore.Engine.GameState
         private readonly List<BaseGameObject> _gameObjects = new List<BaseGameObject>();
 
         private const string FallbackTexture = "BaseBackground";
+        protected bool _debug = false;
 
         private ContentManager _contentManager;
         protected int _viewportWidth;
@@ -34,6 +35,7 @@ namespace OuroborosVandaleriaCore.Engine.GameState
 
         public abstract void LoadContent();
         public abstract void UpdateGameState(GameTime gameTime);
+
         public event EventHandler<BaseGameState> OnStateSwitched;
         public event EventHandler<BaseGameStateEvent> OnEventNotification;
         protected abstract void SetInputManager();
@@ -112,6 +114,9 @@ namespace OuroborosVandaleriaCore.Engine.GameState
             foreach (var gameObject in _gameObjects.OrderBy(a => a.zIndex))
             {
                 gameObject.Render(spriteBatch);
+
+                if (_debug)
+                    gameObject.RenderBoundingBoxes(spriteBatch);
             }
         }
     }

@@ -21,7 +21,7 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
         }
 
         private Vector2 position;
-        public Vector2 Position
+        public virtual Vector2 Position
         {
             get { return position; }
             set { position = value; }

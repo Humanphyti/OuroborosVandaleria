@@ -19,6 +19,9 @@ namespace OuroborosVandaleriaCore.Engine.Emitters
         private IEmitterType _emitterType;
         private int _nbParticleEmittedPerUpdate = 0;
         private int _maxNbParticle = 0;
+        private bool _active = true;
+
+        public int Age { get; set; }
 
         public Emitter(Texture2D texture, Vector2 position, EmitterParticleState particleState, IEmitterType emitterType, int nbParticleEmittedPerUpdate, int maxParticles)
         {
@@ -28,6 +31,7 @@ namespace OuroborosVandaleriaCore.Engine.Emitters
             _nbParticleEmittedPerUpdate = nbParticleEmittedPerUpdate;
             _maxNbParticle = maxParticles;
             Position = position;
+            Age = 0;
         }
 
         private void EmitNewParticle(Particle particle)
@@ -40,6 +44,7 @@ namespace OuroborosVandaleriaCore.Engine.Emitters
             var gravity = _emitterParticleState.Gravity;
             var acceleration = _emitterParticleState.Acceleration;
             var opacityFadingRate = _emitterParticleState.OpactiyFadingRate;
+
             var direction = _emitterType.GetParticleDirection();
             var position = _emitterType.GetParticlePosition(Position);
 
@@ -74,9 +79,18 @@ namespace OuroborosVandaleriaCore.Engine.Emitters
             }
         }
 
+        public void Deactivate()
+        {
+            _active = false;
+        }
+
         public void Update(GameTime gameTime)
         {
-            EmitParticles();
+            if (_active)
+            {
+                EmitParticles();
+            }
+            
             var particleNode = _activeParticles.First;
             while(particleNode != null)
             {
@@ -90,6 +104,8 @@ namespace OuroborosVandaleriaCore.Engine.Emitters
 
                 particleNode = nextNode;
             }
+
+            Age++;
         }
 
         public override void Render(SpriteBatch spriteBatch)

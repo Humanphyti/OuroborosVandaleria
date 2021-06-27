@@ -9,6 +9,8 @@ using Microsoft.Xna.Framework.Input;
 using OuroborosVandaleriaCore.Engine;
 using OuroborosVandaleriaCore.Engine.GameState;
 using OuroborosVandaleriaCore.Engine.Sprite;
+using OuroborosVandaleriaCore.Engine.Collisions;
+
 using OuroborosVandaleriaGame;
 
 using MonoGame.Extended.Tiled;
@@ -20,6 +22,11 @@ namespace OuroborosVandaleriaCore.CharacterControl
     public class Player : Actor
     {
         private const float PLAYER_SPEED = 10.0f;
+
+        private const int BBPosX = 29;
+        private const int BBPosY = 2;
+        private const int BBWidth = 57;
+        private const int BBHeight = 147;
 
         public Sprite Sprite
         {

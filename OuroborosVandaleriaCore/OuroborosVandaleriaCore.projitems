@@ -11,6 +11,9 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)CharacterControl\Actor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Audio\SoundManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Collisions\AABBCollisionDetector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Collisions\BoundingBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Emitters\CircleEmitterType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Emitters\ConeEmitterType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Emitters\Emitter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Emitters\IEmitterType.cs" />
@@ -25,6 +28,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Input\TitleInputMapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Particles\EmbersParticleState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Particles\EmitterParticleState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Particles\ExplosionParticleState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Particles\Particle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\RandomNumberGenerator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\BaseGameObject.cs" />
@@ -43,7 +47,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Engine\GameState\GameStateManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\InputHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\Sprite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Fireball.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\IGameObjectWithDamage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\RangedSpell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\StabAttack.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Wolf.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Maps\GameMap.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OuroborosVandaleria.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\GameState\BaseGameState.cs" />
@@ -54,6 +62,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Screen\OptionsScreen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Screen\StartMenuScreen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Screen\TitleScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Spawners\WolfGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Content\" />
