@@ -6,6 +6,6 @@ namespace OuroborosVandaleriaCore.Engine.Input
 {
     public class TitleInputCommand : BaseInputCommand
     {
-        public class GameSelect : TitleInputCommand { }
+        public class GameStart : TitleInputCommand { }
     }
 }

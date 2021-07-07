@@ -41,7 +41,7 @@ namespace OuroborosVandaleriaCore.GameObjects
         {
             switch (gameEvent)
             {
-                case GamePlayEvents.ActorHit m:
+                case GamePlayEvents.ActorHitBy m:
                     JustHit(m.HitBy);
                     SendEvent(new GamePlayEvents.EnemyDie(_life));
                     break;

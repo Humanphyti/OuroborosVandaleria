@@ -29,22 +29,16 @@ namespace OuroborosVandaleriaCore.GameObjects
         private const int BB3Width = 15;
         private const int BB3Height = 30;
 
-        public Sprite Sprite
-        {
-            get { return _sprite; }
-            set { _sprite = value; }
-        }
-
         public int Damage => 10;
 
         public StabAttack(Sprite sprite)
         {
-            _sprite = sprite;
+            Texture = sprite.Texture;
         }
 
         public StabAttack(Texture2D texture)
         {
-            _sprite.Texture = texture;
+            Texture = texture;
         }
     }
 }

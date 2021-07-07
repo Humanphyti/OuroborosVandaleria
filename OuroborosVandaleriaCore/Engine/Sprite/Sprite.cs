@@ -20,7 +20,7 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
             set { texture = value; }
         }
 
-        private Vector2 position;
+        protected Vector2 position;
         public virtual Vector2 Position
         {
             get { return position; }
@@ -129,7 +129,5 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
             
             return rect;
         }
-
-        public virtual void LockToMap() { }
     }
 }

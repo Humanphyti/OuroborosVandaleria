@@ -10,6 +10,7 @@ using OuroborosVandaleriaCore.Engine.Input;
 using OuroborosVandaleriaCore.Engine.Sprite;
 
 using OuroborosVandaleriaCore.GameObjects;
+using OuroborosVandaleriaCore.GameObjects.OpeningMenuGame;
 
 using System;
 using System.Collections.Generic;
@@ -19,35 +20,83 @@ namespace OuroborosVandaleriaCore.Screen
 {
     public class TitleScreen : BaseGameState
     {
-        Texture2D backgroundImage;
-        LinkLabel startLabel;
+        private const string BackgroundImageLoc = "TitleScreen/SPR_titlescreen_bg";
+        private const string PressStartAnimationSheet = "TitleScreen/SPR_title_open_sheet";
+        private const string PressStartStatic = "TitleScreen/SPR_titlescreen_button";
+        private const string OuroborosLogo = "TitleScreen/SPR_titlescreen_logo";
+        private const string Ouroboros = "TitleScreen/SPR_titlescreen_ouroboros";
+        private const string Vandaleria = "TitleScreen/SPR_titlescreen_vandaleria";
 
-        public override void HandleInput()
+        private Sprite pressStartStatic;
+        private Sprite ouroborosLogo;
+        private Sprite ouroboros;
+        private Sprite vandaleria;
+        private Sprite backgroundImageLoc;
+
+        private ControlManager controls;
+
+        private LinkLabel startLabel;
+        private Label logoAndText;
+        private StartScroll _startScroll;
+        private TitleScreenLogoAndText _logoAndText;
+
+        public override void HandleInput(GameTime gameTime)
         {
             InputManager.GetCommands(cmd =>
             {
-                if(cmd is TitleInputCommand.GameSelect)
+                switch (cmd)
                 {
-                    SwitchState(new StartMenuScreen());
+                    case TitleInputCommand.GameStart:
+                        _startScroll.PlayAnimation();
+                        //Add a fade to black for the final product
+                        SwitchState(new StartMenuScreen());
+                        break;
                 }
             });
         }
 
         public override void LoadContent()
         {
-            //AddGameObject(new BaseGameObject(LoadTexture("TitleScreen/SPR_titlescreen_bg")));
 
+            AddGameObject(new BackgroundImage(LoadTexture(BackgroundImageLoc)));
+            _startScroll = new StartScroll(LoadTexture(PressStartAnimationSheet));
+            pressStartStatic = new Sprite(LoadTexture(PressStartStatic));
+            //_logoAndText = new TitleScreenLogoAndText(LoadTexture(OuroborosLogo), LoadTexture(Ouroboros), LoadTexture(Vandaleria));
+
+            //logoAndText = new Label();
+            //logoAndText.Position = new Vector2();
+            //logoAndText.Sprite = _logoAndText;
+            //logoAndText.Color = Color.White;
+
+
+            startLabel = new LinkLabel();
+            startLabel.Position = new Vector2(_viewportWidth / 2.0f, _viewportHeight / 1.5f);
+            startLabel.BaseGameObject = pressStartStatic;
+            startLabel.Color = Color.White;
+            startLabel.Size = startLabel.Rect;
+            startLabel.TabStop = true;
+            startLabel.HasFocus = true;
+
+            controls.Add(startLabel);
+            //controls.Add(logoAndText);
         }
 
         public override void UpdateGameState(GameTime gameTime)
         {
-            
+            _startScroll.Update(gameTime);
         }
 
         protected override void SetInputManager()
         {
             InputManager = new InputManager(new TitleInputMapper());
         }
+
+        public override void Render(SpriteBatch spriteBatch)
+        {
+            base.Render(spriteBatch);
+        }
+
+
         //Sprite pressStartPrompt;
 
 

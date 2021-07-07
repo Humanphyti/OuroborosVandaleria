@@ -10,6 +10,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)CharacterControl\Actor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Animation\Animation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Animation\AnimationFrame.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Audio\SoundManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Collisions\AABBCollisionDetector.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Collisions\BoundingBox.cs" />
@@ -31,14 +33,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Particles\ExplosionParticleState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Particles\Particle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\RandomNumberGenerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\BaseCompositeObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\OpeningMenuGame\BackgroundImage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\BaseGameObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\GameTimeExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\AnimatedSprite.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\Animation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CharacterControl\Player.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\SpriteSheet.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\SpriteSheetAnimation.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\TextureRegion2D.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\UI\Control.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\UI\ControlManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\UI\Label.cs" />
@@ -47,8 +46,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)Engine\GameState\GameStateManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\InputHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Sprite\Sprite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\BaseTextObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\DebugText.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Fireball.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\IGameObjectWithDamage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\IGameObjectWithHeal.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\OpeningMenuGame\StartScroll.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameObjects\OpeningMenuGame\TitleScreenLogoAndText.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\RangedSpell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\StabAttack.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameObjects\Wolf.cs" />

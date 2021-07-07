@@ -6,6 +6,8 @@ using Microsoft.Xna.Framework;
 
 using OuroborosVandaleriaCore.Engine;
 using OuroborosVandaleriaCore.Engine.Sprite;
+using OuroborosVandaleriaCore.Engine.Animation;
+
 using OuroborosVandaleriaCore.GameObjects;
 
 namespace OuroborosVandaleriaCore.CharacterControl

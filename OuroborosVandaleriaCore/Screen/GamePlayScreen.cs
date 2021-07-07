@@ -78,9 +78,9 @@ namespace OuroborosVandaleriaCore.Screen
 
             //AddGameObject(new GameMap());
 
-            //var playerXPos = _viewportWidth / 2 - _player.Sprite.Texture.Width / 2;
-            //var playerYPos = _viewportHeight / 2 - _player.Sprite.Texture.Height - 30;
-            //_player.Sprite.Position = new Vector2(playerXPos, playerYPos);
+            //var playerXPos = _viewportWidth / 2 - _player.Texture.Width / 2;
+            //var playerYPos = _viewportHeight / 2 - _player.Texture.Height - 30;
+            //_player.Position = new Vector2(playerXPos, playerYPos);
 
             var spellSound = LoadSound("TestAudio/1-Dark Fantasy Studio- Before the dawn (seamless)");
             var attackSound = LoadSound("TestAudio / 3 - Dark Fantasy Studio - Over the world(seamless)");
@@ -165,7 +165,7 @@ namespace OuroborosVandaleriaCore.Screen
             }
         }
 
-        public override void HandleInput()
+        public override void HandleInput(GameTime gameTime)
         {
             InputManager.GetCommands(cmd =>
             {
@@ -222,22 +222,22 @@ namespace OuroborosVandaleriaCore.Screen
         {
             if(_player.Position.X < 0)
             {
-                _player.Sprite.Position = new Vector2(0, _player.Position.Y);
+                _player.Position = new Vector2(0, _player.Position.Y);
             }
 
-            if(_player.Position.X > _viewportWidth - _player.Sprite.Texture.Width)
+            if(_player.Position.X > _viewportWidth - _player.Texture.Width)
             {
-                _player.Sprite.Position = new Vector2(_viewportWidth - _player.Sprite.Texture.Width, _player.Position.Y);
+                _player.Position = new Vector2(_viewportWidth - _player.Texture.Width, _player.Position.Y);
             }
 
             if(_player.Position.Y < 0)
             {
-                _player.Sprite.Position = new Vector2(_player.Position.X, 0);
+                _player.Position = new Vector2(_player.Position.X, 0);
             }
 
-            if(_player.Position.Y > _viewportHeight - _player.Sprite.Texture.Height)
+            if(_player.Position.Y > _viewportHeight - _player.Texture.Height)
             {
-                _player.Sprite.Position = new Vector2(_player.Position.X, _viewportHeight - _player.Sprite.Texture.Height);
+                _player.Position = new Vector2(_player.Position.X, _viewportHeight - _player.Texture.Height);
             }
         }
 
@@ -281,11 +281,11 @@ namespace OuroborosVandaleriaCore.Screen
             var spellSpriteRight = new RangedSpell(_rangedSpell);
 
             //position bullets around the fighter's nose when they get fired
-            var spellY = _player.Sprite.Position.Y + 30;
-            var spellLeftX = _player.Sprite.Position.X + _player.Sprite.Texture.Width / 2 - 40;
-            var spellRightX = _player.Sprite.Position.X + _player.Sprite.Texture.Width / 2 + 10;
-            spellSpriteLeft.Sprite.Position = new Vector2(spellLeftX, spellY);
-            spellSpriteRight.Sprite.Position = new Vector2(spellRightX, spellY);
+            var spellY = _player.Position.Y + 30;
+            var spellLeftX = _player.Position.X + _player.Texture.Width / 2 - 40;
+            var spellRightX = _player.Position.X + _player.Texture.Width / 2 + 10;
+            spellSpriteLeft.Position = new Vector2(spellLeftX, spellY);
+            spellSpriteRight.Position = new Vector2(spellRightX, spellY);
 
             _rangedSpells.Add(spellSpriteLeft);
             _rangedSpells.Add(spellSpriteRight);
@@ -296,11 +296,11 @@ namespace OuroborosVandaleriaCore.Screen
             var stabSpriteLeft = new StabAttack(_stabAttack);
             var stabSpriteRight = new StabAttack(_stabAttack);
 
-            var stabY = _player.Sprite.Position.Y + 30;
-            var stabLeftX = _player.Sprite.Position.X + _player.Sprite.Texture.Width / 2 - 40;
-            var stabRightX = _player.Sprite.Position.X + _player.Sprite.Texture.Width / 2 + 10;
-            stabSpriteLeft.Sprite.Position = new Vector2(stabLeftX, stabY);
-            stabSpriteRight.Sprite.Position = new Vector2(stabRightX, stabY);
+            var stabY = _player.Position.Y + 30;
+            var stabLeftX = _player.Position.X + _player.Texture.Width / 2 - 40;
+            var stabRightX = _player.Position.X + _player.Texture.Width / 2 + 10;
+            stabSpriteLeft.Position = new Vector2(stabLeftX, stabY);
+            stabSpriteRight.Position = new Vector2(stabRightX, stabY);
 
             //probably the combo logic goes here
         }

@@ -24,12 +24,7 @@ namespace OuroborosVandaleriaGame
 
         private GraphicsDeviceManager _graphics;
         public SpriteBatch _spriteBatch;
-        GameStateManager stateManager;
-        TiledMapRenderer tiledMapRenderer;
-        public TitleScreen TitleScreen;
-        public StartMenuScreen StartMenuScreen;
-        public GamePlayScreen GamePlayScreen;
-        public OptionsScreen OptionsScreen;
+        //TiledMapRenderer tiledMapRenderer;
 
         private int _DesignedResolutionWidth;
         private int _DesignedResolutioHeight;
@@ -40,12 +35,8 @@ namespace OuroborosVandaleriaGame
 
         public OuroborosVandaleria(int width, int height, BaseGameState firstGameState)
         {
-            _graphics = new GraphicsDeviceManager(this)
-            {
-                PreferredBackBufferWidth = width,
-                PreferredBackBufferHeight = height,
-                IsFullScreen = false
-            };
+            Content.RootDirectory = "Content";
+            _graphics = new GraphicsDeviceManager(this);
 
             _firstGameState = firstGameState;
             _DesignedResolutionWidth = width;
@@ -54,7 +45,7 @@ namespace OuroborosVandaleriaGame
 
             //ScreenRectangle = new Rectangle(0, 0, screenWidth, screenHeight);
 
-            Content.RootDirectory = "Content";
+            
 
             //Components.Add(new InputHandler(this));
 
@@ -81,6 +72,11 @@ namespace OuroborosVandaleriaGame
             _currentGameState = gameState;
 
             _currentGameState.Initialize(Content, _graphics.GraphicsDevice.Viewport.Width, _graphics.GraphicsDevice.Viewport.Height);
+
+            _currentGameState.LoadContent();
+
+            _currentGameState.OnStateSwitched += CurrentGameState_OnStateSwitched;
+            _currentGameState.OnEventNotification += _currentGameState_OnEventNotification;
         }
 
         private void CurrentGameState_OnStateSwitched(object sender, BaseGameState e)
@@ -101,6 +97,10 @@ namespace OuroborosVandaleriaGame
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            _graphics.PreferredBackBufferWidth = _DesignedResolutionWidth;
+            _graphics.PreferredBackBufferHeight = _DesignedResolutioHeight;
+            _graphics.IsFullScreen = false;
+            _graphics.ApplyChanges();
 
             _renderTarget = new RenderTarget2D(_graphics.GraphicsDevice, _DesignedResolutionWidth, _DesignedResolutioHeight, false, SurfaceFormat.Color, DepthFormat.None, 0, RenderTargetUsage.DiscardContents);
             _renderScaleRectangle = GetScaleRectangle();
@@ -112,6 +112,7 @@ namespace OuroborosVandaleriaGame
         {
             var variance = 0.5;
             var actualAspectRatio = Window.ClientBounds.Width / (float)Window.ClientBounds.Height;
+            
             Rectangle scaleRectangle;
 
             if(actualAspectRatio <= _designedResolutionAspectRatio)
@@ -142,13 +143,12 @@ namespace OuroborosVandaleriaGame
 
         protected override void UnloadContent()
         {
-
+            _currentGameState?.UnloadContent();
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+            _currentGameState.HandleInput(gameTime);
             // TODO: Add your update logic here
             _currentGameState.Update(gameTime);
 

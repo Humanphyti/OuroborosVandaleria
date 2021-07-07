@@ -31,8 +31,8 @@ namespace OuroborosVandaleriaCore.Engine.Collisions
             {
                 foreach(var activeObject in activeObjects)
                 {
-                    if (DetectCollision(passiveObject, activeObject)) ;
-                    collisionHandler(passiveObject, activeObject);
+                    if (DetectCollision(passiveObject, activeObject))
+                        collisionHandler(passiveObject, activeObject);
                 }
             }
         }

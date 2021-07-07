@@ -19,7 +19,7 @@ namespace OuroborosVandaleriaCore.Engine.UI
         public override void Update(GameTime gameTime) { }
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(SpriteFont, text, Position, Color);
+            spriteBatch.DrawString(SpriteFont, TextObject.Text, Position, Color);
         }
 
         public override void HandleInput(PlayerIndex playerIndex) { }

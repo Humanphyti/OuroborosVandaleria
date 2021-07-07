@@ -18,7 +18,7 @@ namespace OuroborosVandaleriaCore.Screen
 
         }
 
-        public override void HandleInput()
+        public override void HandleInput(GameTime gameTime)
         {
             
         }

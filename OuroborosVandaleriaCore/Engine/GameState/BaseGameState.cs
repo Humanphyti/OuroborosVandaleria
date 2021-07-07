@@ -39,7 +39,7 @@ namespace OuroborosVandaleriaCore.Engine.GameState
         public event EventHandler<BaseGameState> OnStateSwitched;
         public event EventHandler<BaseGameStateEvent> OnEventNotification;
         protected abstract void SetInputManager();
-        public abstract void HandleInput();
+        public abstract void HandleInput(GameTime gameTime);
 
         public void UnloadContent(ContentManager contentManager)
         {
@@ -68,7 +68,7 @@ namespace OuroborosVandaleriaCore.Engine.GameState
 
         protected Texture2D LoadTexture(string assetName)
         {
-            return _contentManager.Load<Texture2D>(FallbackTexture);
+            return _contentManager.Load<Texture2D>(assetName);
         }
 
         public TiledMap LoadMap(string mapName, GraphicsDevice graphicsDevice)
@@ -80,6 +80,11 @@ namespace OuroborosVandaleriaCore.Engine.GameState
         protected SoundEffect LoadSound(string soundName)
         {
             return _contentManager.Load<SoundEffect>(soundName);
+        }
+
+        protected SpriteFont LoadFont(string fontName)
+        {
+            return _contentManager.Load<SpriteFont>(fontName);
         }
 
         protected void NotifyEvent(BaseGameStateEvent eventType)
@@ -109,14 +114,14 @@ namespace OuroborosVandaleriaCore.Engine.GameState
             _gameObjects.Remove(gameObject);
         }
 
-        public void Render(SpriteBatch spriteBatch)
+        public virtual void Render(SpriteBatch spriteBatch)
         {
             foreach (var gameObject in _gameObjects.OrderBy(a => a.zIndex))
             {
-                gameObject.Render(spriteBatch);
-
                 if (_debug)
                     gameObject.RenderBoundingBoxes(spriteBatch);
+
+                gameObject.Render(spriteBatch);
             }
         }
     }

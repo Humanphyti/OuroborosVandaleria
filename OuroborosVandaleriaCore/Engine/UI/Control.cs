@@ -7,26 +7,26 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 
 using OuroborosVandaleriaCore.Engine;
-using OuroborosVandaleriaCore.Engine.Sprite;
+using OuroborosVandaleriaCore.GameObjects;
 
 namespace OuroborosVandaleriaCore.Engine.UI
 {
-    public abstract class Control
+    public abstract class Control : BaseGameObject
     {
         protected string name;
-        protected string text;
         //protected Texture2D texture;
         protected Rectangle size;
-        protected Vector2 position;
         protected object value;
         protected bool hasFocus;
         protected bool enabled;
         protected bool visible;
         protected bool tabStop;
-        protected SpriteFont spriteFont;
         protected Color color;
         protected string type;
         protected Sprite.Sprite sprite;
+        protected SpriteFont font;
+        protected BaseTextObject textObject;
+        protected BaseGameObject baseGameObject;
 
 
         public event EventHandler Selected;
@@ -38,32 +38,15 @@ namespace OuroborosVandaleriaCore.Engine.UI
             set { name = value; }
         }
 
-        public string Text
+        public BaseTextObject TextObject
         {
-            get { return text; }
-            set { text = value; }
+            get { return textObject; }
+            set { textObject = value; }
         }
-
-        /*public Texture2D Texture
-        {
-            get { return texture; }
-            set { texture = value; }
-        }
-        */
         public Rectangle Size
         {
             get { return size; }
             set { size = value; }
-        }
-
-        public Vector2 Position
-        {
-            get { return position; }
-            set
-            {
-                position = value;
-                position.Y = (int)position.Y;
-            }
         }
 
         public object Value
@@ -98,8 +81,8 @@ namespace OuroborosVandaleriaCore.Engine.UI
 
         public SpriteFont SpriteFont
         {
-            get { return spriteFont; }
-            set { spriteFont = value; }
+            get { return font; }
+            set { font = value; }
         }
 
         public Color Color
@@ -114,10 +97,10 @@ namespace OuroborosVandaleriaCore.Engine.UI
             set { type = value; }
         }
 
-        public Sprite.Sprite Sprite
+        public BaseGameObject BaseGameObject
         {
-            get { return sprite; }
-            set { sprite = value; }
+            get { return baseGameObject; }
+            set { baseGameObject = value; }
         }
 
         //constructor

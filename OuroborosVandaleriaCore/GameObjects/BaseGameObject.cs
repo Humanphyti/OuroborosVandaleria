@@ -13,7 +13,6 @@ namespace OuroborosVandaleriaCore.GameObjects
 {
     public  class BaseGameObject : Sprite
     {
-        protected Sprite _sprite;
         protected List<BoundingBox> _boundingBoxes = new List<BoundingBox>();
         protected Texture2D _boundingBoxTexture;
 
@@ -26,12 +25,12 @@ namespace OuroborosVandaleriaCore.GameObjects
         public int Height { get { return Texture.Height; } }
         public override Vector2 Position
         {
-            get { return _sprite.Position; }
+            get { return Position; }
             set
             {
-                var deltaX = value.X - _sprite.Position.X;
-                var deltaY = value.Y - _sprite.Position.Y;
-                _sprite.Position = value;
+                var deltaX = value.X - Position.X;
+                var deltaY = value.Y - Position.Y;
+                Position = value;
 
                 foreach(var bb in _boundingBoxes)
                 {
@@ -48,7 +47,7 @@ namespace OuroborosVandaleriaCore.GameObjects
 
         public virtual void Render(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(_sprite.Texture, _sprite.Position, Color.White);
+            spriteBatch.Draw(Texture, Position, Color.White);
         }
 
         public void SendEvent(BaseGameStateEvent e)
