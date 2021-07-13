@@ -7,24 +7,41 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
+using OuroborosVandaleriaCore.Engine.Collisions;
+
 using MonoGame.Extended.Tiled;
 
 namespace OuroborosVandaleriaCore.Engine.Sprite
 {
     public class Sprite
     {
-        private Texture2D texture;
-        public Texture2D Texture
+        protected Texture2D _texture;
+        protected Texture2D boundingBoxTexture;
+
+        protected List<Collisions.BoundingBox> _boundingBoxes = new List<Collisions.BoundingBox>();
+        public List<Collisions.BoundingBox> BoundingBoxes
         {
-            get { return this.texture; }
-            set { texture = value; }
+            get
+            {
+                return _boundingBoxes;
+            }
         }
 
         protected Vector2 position;
         public virtual Vector2 Position
         {
             get { return position; }
-            set { position = value; }
+            set
+            {
+                var deltaX = value.X - position.X;
+                var deltaY = value.Y - position.Y;
+                position = value;
+
+                foreach (var bb in _boundingBoxes)
+                {
+                    bb.Position = new Vector2(bb.Position.X + deltaX, bb.Position.Y + deltaY);
+                }
+            }
         }
 
         private float rotation;
@@ -49,8 +66,8 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
             set { rect = value; }
         }
 
-        private float scaleFactor;
-        public float ScaleFactor
+        private Vector2 scaleFactor;
+        public Vector2 ScaleFactor
         {
             get { return scaleFactor; }
             set { scaleFactor = value; }
@@ -64,6 +81,10 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
             set { spriteMid = value; }
         }
 
+        public Texture2D Texture
+        {
+            get { return _texture; }
+        }
         //default constructor
         public Sprite()
         {
@@ -71,23 +92,23 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
             rotation = 0.0f;
             origin = Vector2.Zero;
             rect = new Rectangle(0, 0, 0, 0);
-            scaleFactor = 1;
+            scaleFactor = Vector2.One;
             SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
         }
 
         //constructors
-        public Sprite(Texture2D texture, Vector2 position, Vector2 origin, float scaleFactor)
+        public Sprite(Texture2D texture, Vector2 position, Vector2 origin, Vector2 scaleFactor)
         {
-            Texture = texture;
+            _texture = texture;
             Position = position;
             Origin = origin;
-            Rect = ScaleSprite(scaleFactor);
+            Rect = ScaleSprite((int)scaleFactor.X, (int)scaleFactor.Y);
             SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
         }
 
-        public Sprite(Texture2D texture, Vector2 origin, float scaleFactor)
+        public Sprite(Texture2D texture, Vector2 origin, Vector2 scaleFactor)
         {
-            Texture = texture;
+            _texture = texture;
             Position = position;
             Origin = origin;
             Rect = rect;
@@ -95,23 +116,23 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
             SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
         }
 
-        public Sprite(Texture2D texture, int originX, int originY, float scaleFactor)
+        public Sprite(Texture2D texture, int originX, int originY, Vector2 scaleFactor)
         {
-            Texture = texture;
+            _texture = texture;
             Origin = new Vector2(originX, originY);
             ScaleFactor = scaleFactor;
-            Rect = ScaleSprite(scaleFactor);
+            Rect = ScaleSprite((int)scaleFactor.X, (int)scaleFactor.Y);
             SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
         }
 
         public Sprite(Texture2D texture)
         {
-            Texture = texture;
+            _texture = texture;
             position = Vector2.Zero;
             Rotation = 0.0f;
             origin = Vector2.Zero;
             rect = new Rectangle(0, 0, 0, 0);
-            scaleFactor = 1;
+            scaleFactor = Vector2.One;
             SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
         }
 

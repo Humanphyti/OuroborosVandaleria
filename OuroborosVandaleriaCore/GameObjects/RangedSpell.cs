@@ -17,12 +17,12 @@ namespace OuroborosVandaleriaCore.GameObjects
 
         public RangedSpell(Sprite sprite)
         {
-            Texture = sprite.Texture;
+            //_texture = sprite;
         }
 
         public RangedSpell(Texture2D texture)
         {
-            Texture = texture;
+            _texture = texture;
         }
 
         public void MoveUp()

@@ -97,10 +97,10 @@ namespace OuroborosVandaleriaCore.Engine.UI
             set { type = value; }
         }
 
-        public BaseGameObject BaseGameObject
+        public Sprite.Sprite Sprite
         {
-            get { return baseGameObject; }
-            set { baseGameObject = value; }
+            get { return sprite; }
+            set { sprite = value; }
         }
 
         //constructor
@@ -114,7 +114,6 @@ namespace OuroborosVandaleriaCore.Engine.UI
 
         //abstract methods
         public abstract void Update(GameTime gameTime);
-        public abstract void Draw(SpriteBatch spriteBatch);
         public abstract void HandleInput(PlayerIndex playerIndex);
 
         protected virtual void OnSelected(EventArgs e)

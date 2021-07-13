@@ -53,7 +53,7 @@ namespace OuroborosVandaleriaCore.Engine.UI
         {
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public override void Render(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(image, destRect, sourceRect, Color);
         }

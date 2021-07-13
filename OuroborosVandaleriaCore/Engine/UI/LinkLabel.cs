@@ -23,7 +23,7 @@ namespace OuroborosVandaleriaCore.Engine.UI
         {
             TabStop = true;
             HasFocus = false;
-            Position = Vector2.One;
+            Position = Vector2.Zero;
         }
 
         //abstract implementations from Control
@@ -31,12 +31,12 @@ namespace OuroborosVandaleriaCore.Engine.UI
         {
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public override void Render(SpriteBatch spriteBatch)
         {
             if (hasFocus)
-                spriteBatch.Draw(Texture, Position, null, selectedColor, 0.0f, Origin, ScaleFactor, SpriteEffects.None, 0f);
+                spriteBatch.Draw(Sprite.Texture, Position, null, selectedColor, 0.0f, Origin, ScaleFactor, SpriteEffects.None, 0f);
             else
-                spriteBatch.Draw(Texture, Position, null, Color, 0.0f, Origin, ScaleFactor, SpriteEffects.None, 0f);
+                spriteBatch.Draw(Sprite.Texture, Position, null, Color, 0.0f, Origin, ScaleFactor, SpriteEffects.None, 0f);
         }
 
         public override void HandleInput(PlayerIndex playerIndex)

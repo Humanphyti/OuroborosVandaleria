@@ -55,12 +55,12 @@ namespace OuroborosVandaleriaCore.Engine.UI
                 NextControl();
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Render(SpriteBatch spriteBatch)
         {
             foreach (Control c in this)
             {
                 if (c.Visible)
-                    c.Draw(spriteBatch);
+                    c.Render(spriteBatch);
             }
         }
 

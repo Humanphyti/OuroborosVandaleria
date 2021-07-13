@@ -32,7 +32,7 @@ namespace OuroborosVandaleriaCore.GameObjects
 
         public Wolf(Texture2D texture, List<(int, Vector2)> path)
         {
-            Texture = texture;
+            _texture = texture;
             _path = path;
             AddBoundingBox(new Engine.Collisions.BoundingBox(new Vector2(BBPosX, BBPosY), BBWidth, BBHeight));
         }
@@ -60,7 +60,7 @@ namespace OuroborosVandaleriaCore.GameObjects
             var wolfDestRect = new Rectangle(Position.ToPoint(), new Point(WolfWidth, WolfHeight));
 
             var color = Color.White;
-            spriteBatch.Draw(Texture, wolfDestRect, wolfRect, color, MathHelper.Pi, Origin, SpriteEffects.None, 0f);
+            spriteBatch.Draw(_texture, wolfDestRect, wolfRect, color, MathHelper.Pi, Origin, SpriteEffects.None, 0f);
         }
 
         public void Update()

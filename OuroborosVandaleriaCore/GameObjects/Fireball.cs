@@ -40,11 +40,11 @@ namespace OuroborosVandaleriaCore.GameObjects
 
         public Fireball(Texture2D fireballTexture, Texture2D embersTexture)
         {
-            Texture = fireballTexture;
+            _texture = fireballTexture;
             _embersEmitter = new EmbersEmitter(embersTexture, Position);
             AddBoundingBox(new Engine.Collisions.BoundingBox(new Vector2(BBPosX, BBPosY), BBWidth, BBHeigt));
 
-            var ratio = (float)Texture.Height / (float)Texture.Width;
+            var ratio = (float)_texture.Height / (float)_texture.Width;
             _fireballWidth = 50;
             _fireballHeight = (int)(_fireballWidth * ratio);
         }
@@ -60,7 +60,7 @@ namespace OuroborosVandaleriaCore.GameObjects
         public override void Render(SpriteBatch spriteBatch)
         {
             var destRectangle = new Rectangle((int)Position.X, (int)Position.Y, _fireballWidth, _fireballHeight);
-            spriteBatch.Draw(Texture, destRectangle, Color.White);
+            spriteBatch.Draw(_texture, destRectangle, Color.White);
 
             _embersEmitter.Render(spriteBatch);
         }

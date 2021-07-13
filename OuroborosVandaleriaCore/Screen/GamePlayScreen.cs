@@ -225,9 +225,9 @@ namespace OuroborosVandaleriaCore.Screen
                 _player.Position = new Vector2(0, _player.Position.Y);
             }
 
-            if(_player.Position.X > _viewportWidth - _player.Texture.Width)
+            if(_player.Position.X > _viewportWidth - _player.Width)
             {
-                _player.Position = new Vector2(_viewportWidth - _player.Texture.Width, _player.Position.Y);
+                _player.Position = new Vector2(_viewportWidth - _player.Width, _player.Position.Y);
             }
 
             if(_player.Position.Y < 0)
@@ -235,9 +235,9 @@ namespace OuroborosVandaleriaCore.Screen
                 _player.Position = new Vector2(_player.Position.X, 0);
             }
 
-            if(_player.Position.Y > _viewportHeight - _player.Texture.Height)
+            if(_player.Position.Y > _viewportHeight - _player.Height)
             {
-                _player.Position = new Vector2(_player.Position.X, _viewportHeight - _player.Texture.Height);
+                _player.Position = new Vector2(_player.Position.X, _viewportHeight - _player.Height);
             }
         }
 
@@ -282,8 +282,8 @@ namespace OuroborosVandaleriaCore.Screen
 
             //position bullets around the fighter's nose when they get fired
             var spellY = _player.Position.Y + 30;
-            var spellLeftX = _player.Position.X + _player.Texture.Width / 2 - 40;
-            var spellRightX = _player.Position.X + _player.Texture.Width / 2 + 10;
+            var spellLeftX = _player.Position.X + _player.Width / 2 - 40;
+            var spellRightX = _player.Position.X + _player.Width / 2 + 10;
             spellSpriteLeft.Position = new Vector2(spellLeftX, spellY);
             spellSpriteRight.Position = new Vector2(spellRightX, spellY);
 
@@ -297,8 +297,8 @@ namespace OuroborosVandaleriaCore.Screen
             var stabSpriteRight = new StabAttack(_stabAttack);
 
             var stabY = _player.Position.Y + 30;
-            var stabLeftX = _player.Position.X + _player.Texture.Width / 2 - 40;
-            var stabRightX = _player.Position.X + _player.Texture.Width / 2 + 10;
+            var stabLeftX = _player.Position.X + _player.Width / 2 - 40;
+            var stabRightX = _player.Position.X + _player.Width / 2 + 10;
             stabSpriteLeft.Position = new Vector2(stabLeftX, stabY);
             stabSpriteRight.Position = new Vector2(stabRightX, stabY);
 

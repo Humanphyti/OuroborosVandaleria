@@ -36,7 +36,7 @@ namespace OuroborosVandaleriaCore.Engine.Particles
 
             Position = position;
             Opacity = opacity;
-            ScaleFactor = scale;
+            ScaleFactor = new Vector2(scale, scale);
         }
 
         public bool Update(GameTime gameTime)

@@ -29,8 +29,6 @@ namespace OuroborosVandaleriaCore.CharacterControl
         private const int AnimationCellHeight = 116;
         private const int AnimationSpeed = 3;
 
-
-
         private const float PLAYER_SPEED = 10.0f;
 
         private const int BBPosX = 29;

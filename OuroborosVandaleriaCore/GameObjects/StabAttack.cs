@@ -33,12 +33,12 @@ namespace OuroborosVandaleriaCore.GameObjects
 
         public StabAttack(Sprite sprite)
         {
-            Texture = sprite.Texture;
+            //Texture = sprite.Texture;
         }
 
         public StabAttack(Texture2D texture)
         {
-            Texture = texture;
+            _texture = texture;
         }
     }
 }

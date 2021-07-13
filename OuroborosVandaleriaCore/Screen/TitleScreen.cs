@@ -26,6 +26,7 @@ namespace OuroborosVandaleriaCore.Screen
         private const string OuroborosLogo = "TitleScreen/SPR_titlescreen_logo";
         private const string Ouroboros = "TitleScreen/SPR_titlescreen_ouroboros";
         private const string Vandaleria = "TitleScreen/SPR_titlescreen_vandaleria";
+        private const string RuinedKing = "RuinedKing";
 
         private Sprite pressStartStatic;
         private Sprite ouroborosLogo;
@@ -39,6 +40,7 @@ namespace OuroborosVandaleriaCore.Screen
         private Label logoAndText;
         private StartScroll _startScroll;
         private TitleScreenLogoAndText _logoAndText;
+        private BackgroundImage bgImage;
 
         public override void HandleInput(GameTime gameTime)
         {
@@ -57,12 +59,14 @@ namespace OuroborosVandaleriaCore.Screen
 
         public override void LoadContent()
         {
-
-            AddGameObject(new BackgroundImage(LoadTexture(BackgroundImageLoc)));
+            controls = new ControlManager(LoadFont(RuinedKing));
             _startScroll = new StartScroll(LoadTexture(PressStartAnimationSheet));
             pressStartStatic = new Sprite(LoadTexture(PressStartStatic));
             //_logoAndText = new TitleScreenLogoAndText(LoadTexture(OuroborosLogo), LoadTexture(Ouroboros), LoadTexture(Vandaleria));
 
+            bgImage = new BackgroundImage(new Sprite(LoadTexture(BackgroundImageLoc)));
+            bgImage.ScaleFactor = new Vector2(7, 5);
+            
             //logoAndText = new Label();
             //logoAndText.Position = new Vector2();
             //logoAndText.Sprite = _logoAndText;
@@ -70,15 +74,21 @@ namespace OuroborosVandaleriaCore.Screen
 
 
             startLabel = new LinkLabel();
-            startLabel.Position = new Vector2(_viewportWidth / 2.0f, _viewportHeight / 1.5f);
-            startLabel.BaseGameObject = pressStartStatic;
+            startLabel.Name = "PressStartButton";
+            startLabel.Position = new Vector2(350, 600);//_viewportWidth / 2.0f, _viewportHeight / 1.5f);
+            startLabel.Sprite = pressStartStatic;
             startLabel.Color = Color.White;
             startLabel.Size = startLabel.Rect;
+            startLabel.ScaleFactor = new Vector2(3, 2);
             startLabel.TabStop = true;
             startLabel.HasFocus = true;
 
             controls.Add(startLabel);
             //controls.Add(logoAndText);
+
+            AddGameObject(bgImage);
+            AddGameObject(startLabel);
+            //AddGameObject(logoAndText);
         }
 
         public override void UpdateGameState(GameTime gameTime)

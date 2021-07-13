@@ -27,7 +27,7 @@ namespace OuroborosVandaleriaCore.Engine.Emitters
         {
             _emitterParticleState = particleState;
             _emitterType = emitterType;
-            Texture = texture;
+            _texture = texture;
             _nbParticleEmittedPerUpdate = nbParticleEmittedPerUpdate;
             _maxNbParticle = maxParticles;
             Position = position;
@@ -110,11 +110,11 @@ namespace OuroborosVandaleriaCore.Engine.Emitters
 
         public override void Render(SpriteBatch spriteBatch)
         {
-            var sourceRectangle = new Rectangle(0, 0, Texture.Width, Texture.Height);
+            var sourceRectangle = new Rectangle(0, 0, _texture.Width, _texture.Height);
 
             foreach(var particle in _activeParticles)
             {
-                spriteBatch.Draw(Texture, particle.Position, sourceRectangle, Color.White * particle.Opacity, 0.0f, new Vector2(0, 0), particle.ScaleFactor, SpriteEffects.None, zIndex);
+                spriteBatch.Draw(_texture, particle.Position, sourceRectangle, Color.White * particle.Opacity, 0.0f, new Vector2(0, 0), particle.ScaleFactor, SpriteEffects.None, zIndex);
             }
         }
     }

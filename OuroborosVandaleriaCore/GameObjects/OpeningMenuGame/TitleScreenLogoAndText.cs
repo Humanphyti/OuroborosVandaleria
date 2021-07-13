@@ -19,7 +19,7 @@ namespace OuroborosVandaleriaCore.GameObjects.OpeningMenuGame
         {
             get
             {
-                return Matrix.CreateTranslation(-Origin.X, -Origin.Y, 0f) * Matrix.CreateScale(ScaleFactor, ScaleFactor, 1f) * Matrix.CreateRotationZ(Rotation) * Matrix.CreateTranslation(Position.X, Position.Y, 0f);
+                return Matrix.CreateTranslation(-Origin.X, -Origin.Y, 0f) * Matrix.CreateScale(ScaleFactor.X, ScaleFactor.Y, 1f) * Matrix.CreateRotationZ(Rotation) * Matrix.CreateTranslation(Position.X, Position.Y, 0f);
             }
         }
 
@@ -31,9 +31,9 @@ namespace OuroborosVandaleriaCore.GameObjects.OpeningMenuGame
 
         public TitleScreenLogoAndText(Texture2D logo, Texture2D ouroboros, Texture2D vandaleria)
         {
-            _logo.Texture = logo;
-            _ouroboros.Texture = ouroboros;
-            _vandaleria.Texture = vandaleria;
+            //_logo. = logo;
+            //_ouroboros.Texture = ouroboros;
+            //_vandaleria.Texture = vandaleria;
         }
 
         public static void DecomposeMatrix(ref Matrix matrix, out Vector2 position, out float rotation, out Vector2 scale)
