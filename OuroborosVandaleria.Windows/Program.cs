@@ -14,7 +14,7 @@ namespace OuroborosVandaleriaGame.Windows
         [STAThread]
         static void Main()
         {
-            using (var game = new OuroborosVandaleria(WIDTH, HEIGHT, new TitleScreen()))
+            using (var game = new OuroborosVandaleria(WIDTH, HEIGHT, new StartMenuScreen()))
                 game.Run();
         }
     }

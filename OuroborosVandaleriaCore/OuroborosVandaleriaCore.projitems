@@ -21,11 +21,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Emitters\IEmitterType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Events\GamePlayEvents.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\GameState\BaseGameStateEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\GameState\MenuStateEvent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Input\BaseInputCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Input\BaseInputMapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Input\GameplayInputCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Input\GameplayInputMapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Input\InputManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Input\MenuInputCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Engine\Input\MenuInputMapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Input\TitleInputCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Input\TitleInputMapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine\Particles\EmbersParticleState.cs" />

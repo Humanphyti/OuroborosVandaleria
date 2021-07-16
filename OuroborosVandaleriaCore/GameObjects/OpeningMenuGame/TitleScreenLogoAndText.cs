@@ -9,7 +9,7 @@ using System.Text;
 
 namespace OuroborosVandaleriaCore.GameObjects.OpeningMenuGame
 {
-    class TitleScreenLogoAndText : BaseGameObject
+    class TitleScreenLogoAndText : BaseCompositeObject
     {
         private Sprite _logo;
         private Sprite _ouroboros;
@@ -19,21 +19,15 @@ namespace OuroborosVandaleriaCore.GameObjects.OpeningMenuGame
         {
             get
             {
-                return Matrix.CreateTranslation(-Origin.X, -Origin.Y, 0f) * Matrix.CreateScale(ScaleFactor.X, ScaleFactor.Y, 1f) * Matrix.CreateRotationZ(Rotation) * Matrix.CreateTranslation(Position.X, Position.Y, 0f);
+                return Matrix.CreateTranslation(-_sprite.Origin.X, -_sprite.Origin.Y, 0f) * Matrix.CreateScale(_sprite.ScaleFactor.X, _sprite.ScaleFactor.Y, 1f) * Matrix.CreateRotationZ(_sprite.Rotation) * Matrix.CreateTranslation(Position.X, Position.Y, 0f);
             }
         }
 
-        public override Vector2 Position
+        public TitleScreenLogoAndText(Sprite logo, Sprite ouroboros, Sprite vandaleria)
         {
-            get { return position; }
-            set { position = value; }
-        }
-
-        public TitleScreenLogoAndText(Texture2D logo, Texture2D ouroboros, Texture2D vandaleria)
-        {
-            //_logo. = logo;
-            //_ouroboros.Texture = ouroboros;
-            //_vandaleria.Texture = vandaleria;
+            _logo = logo;
+            _ouroboros = ouroboros;
+            _vandaleria = vandaleria;
         }
 
         public static void DecomposeMatrix(ref Matrix matrix, out Vector2 position, out float rotation, out Vector2 scale)

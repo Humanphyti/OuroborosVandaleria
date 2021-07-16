@@ -16,32 +16,12 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
     public class Sprite
     {
         protected Texture2D _texture;
-        protected Texture2D boundingBoxTexture;
-
-        protected List<Collisions.BoundingBox> _boundingBoxes = new List<Collisions.BoundingBox>();
-        public List<Collisions.BoundingBox> BoundingBoxes
-        {
-            get
-            {
-                return _boundingBoxes;
-            }
-        }
 
         protected Vector2 position;
-        public virtual Vector2 Position
+        public Vector2 Position
         {
             get { return position; }
-            set
-            {
-                var deltaX = value.X - position.X;
-                var deltaY = value.Y - position.Y;
-                position = value;
-
-                foreach (var bb in _boundingBoxes)
-                {
-                    bb.Position = new Vector2(bb.Position.X + deltaX, bb.Position.Y + deltaY);
-                }
-            }
+            set { position = value; }
         }
 
         private float rotation;
@@ -84,6 +64,7 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
         public Texture2D Texture
         {
             get { return _texture; }
+            set { _texture = value; }
         }
         //default constructor
         public Sprite()
@@ -132,7 +113,6 @@ namespace OuroborosVandaleriaCore.Engine.Sprite
             Rotation = 0.0f;
             origin = Vector2.Zero;
             rect = new Rectangle(0, 0, 0, 0);
-            scaleFactor = Vector2.One;
             SpriteMid = new Vector2(Rect.Width / 2, Rect.Height / 2);
         }
 

@@ -277,8 +277,8 @@ namespace OuroborosVandaleriaCore.Screen
 
         private void CreateSpell()
         {
-            var spellSpriteLeft = new RangedSpell(_rangedSpell);
-            var spellSpriteRight = new RangedSpell(_rangedSpell);
+            var spellSpriteLeft = new RangedSpell(_rangedSpell.Sprite);
+            var spellSpriteRight = new RangedSpell(_rangedSpell.Sprite);
 
             //position bullets around the fighter's nose when they get fired
             var spellY = _player.Position.Y + 30;
@@ -293,8 +293,8 @@ namespace OuroborosVandaleriaCore.Screen
 
         private void CreateStab()
         {
-            var stabSpriteLeft = new StabAttack(_stabAttack);
-            var stabSpriteRight = new StabAttack(_stabAttack);
+            var stabSpriteLeft = new StabAttack(_stabAttack.Sprite);
+            var stabSpriteRight = new StabAttack(_stabAttack.Sprite);
 
             var stabY = _player.Position.Y + 30;
             var stabLeftX = _player.Position.X + _player.Width / 2 - 40;

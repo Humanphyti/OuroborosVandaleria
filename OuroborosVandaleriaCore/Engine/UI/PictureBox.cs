@@ -6,19 +6,14 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+using OuroborosVandaleriaCore.Engine.Sprite;
+
 namespace OuroborosVandaleriaCore.Engine.UI
 {
     public class PictureBox : Control
     {
-        Texture2D image;
         Rectangle sourceRect;
         Rectangle destRect;
-
-        public Texture2D Image
-        {
-            get { return image; }
-            set { image = value; }
-        }
 
         public Rectangle SourceRect
         {
@@ -33,17 +28,24 @@ namespace OuroborosVandaleriaCore.Engine.UI
         }
 
         //constructors
-        public PictureBox(Texture2D image, Rectangle destination)
+        public PictureBox()
         {
-            Image = image;
+            TabStop = false;
+            HasFocus = false;
+            Position = Vector2.Zero;
+        }
+
+        public PictureBox(Sprite.Sprite sprite, Rectangle destination)
+        {
+            Sprite.Texture = sprite.Texture;
             DestRect = destination;
-            SourceRect = new Rectangle(0, 0, image.Width, image.Height);
+            SourceRect = new Rectangle(0, 0, Sprite.Texture.Width, Sprite.Texture.Height);
             Color = Color.White;
         }
 
         public PictureBox(Texture2D image, Rectangle destination, Rectangle source)
         {
-            Image = image;
+            Sprite.Texture = image;
             DestRect = destination;
             SourceRect = source;
             Color = Color.White;
@@ -55,7 +57,7 @@ namespace OuroborosVandaleriaCore.Engine.UI
 
         public override void Render(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(image, destRect, sourceRect, Color);
+            spriteBatch.Draw(Sprite.Texture, Position, null, Color, 0.0f, Sprite.Origin, Sprite.ScaleFactor, SpriteEffects.None, 0f);
         }
 
         public override void HandleInput(PlayerIndex playerIndex)

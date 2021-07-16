@@ -37,9 +37,10 @@ namespace OuroborosVandaleriaCore.Screen
         private ControlManager controls;
 
         private LinkLabel startLabel;
-        private Label logoAndText;
+        private PictureBox logoPicture;
+        private PictureBox ouroborosText;
+        private PictureBox vandaleriaText;
         private StartScroll _startScroll;
-        private TitleScreenLogoAndText _logoAndText;
         private BackgroundImage bgImage;
 
         public override void HandleInput(GameTime gameTime)
@@ -48,7 +49,7 @@ namespace OuroborosVandaleriaCore.Screen
             {
                 switch (cmd)
                 {
-                    case TitleInputCommand.GameStart:
+                    case MenuInputCommand.ItemSelect:
                         _startScroll.PlayAnimation();
                         //Add a fade to black for the final product
                         SwitchState(new StartMenuScreen());
@@ -60,35 +61,66 @@ namespace OuroborosVandaleriaCore.Screen
         public override void LoadContent()
         {
             controls = new ControlManager(LoadFont(RuinedKing));
+            backgroundImageLoc = new Sprite(LoadTexture(BackgroundImageLoc));
             _startScroll = new StartScroll(LoadTexture(PressStartAnimationSheet));
             pressStartStatic = new Sprite(LoadTexture(PressStartStatic));
-            //_logoAndText = new TitleScreenLogoAndText(LoadTexture(OuroborosLogo), LoadTexture(Ouroboros), LoadTexture(Vandaleria));
+            ouroborosLogo = new Sprite(LoadTexture(OuroborosLogo));
+            ouroboros = new Sprite(LoadTexture(Ouroboros));
+            vandaleria = new Sprite(LoadTexture(Vandaleria));
 
-            bgImage = new BackgroundImage(new Sprite(LoadTexture(BackgroundImageLoc)));
-            bgImage.ScaleFactor = new Vector2(7, 5);
-            
-            //logoAndText = new Label();
-            //logoAndText.Position = new Vector2();
-            //logoAndText.Sprite = _logoAndText;
-            //logoAndText.Color = Color.White;
+            bgImage = new BackgroundImage();
+            bgImage.Position = new Vector2(0, 0);
+            bgImage.Sprite = backgroundImageLoc;
+            bgImage.Sprite.ScaleFactor = new Vector2(6, 6);
+            bgImage.zIndex = 0;
 
+
+            logoPicture = new PictureBox();
+            logoPicture.Position = new Vector2(_viewportWidth / 3, _viewportHeight / 6.5f);
+            logoPicture.Name = "Logo";
+            logoPicture.Sprite = ouroborosLogo;
+            logoPicture.Sprite.ScaleFactor = new Vector2(6, 6);
+            logoPicture.Color = Color.White;
+            logoPicture.Size = logoPicture.Sprite.Rect;
+            logoPicture.zIndex = 1;
+
+            ouroborosText = new PictureBox();
+            ouroborosText.Position = new Vector2(_viewportWidth / 6.4f, _viewportHeight / 5.5f);
+            ouroborosText.Name = "Ouroboros";
+            ouroborosText.Sprite = ouroboros;
+            ouroborosText.Sprite.ScaleFactor = new Vector2(6f, 6f);
+            ouroborosText.Color = Color.White;
+            ouroborosText.Size = ouroborosText.Sprite.Rect;
+            ouroborosText.zIndex = 2;
+
+            vandaleriaText = new PictureBox();
+            vandaleriaText.Position = new Vector2(_viewportWidth / 3.5f, _viewportHeight / 1.45f);
+            vandaleriaText.Name = "Vandaleria";
+            vandaleriaText.Sprite = vandaleria;
+            vandaleriaText.Sprite.ScaleFactor = new Vector2(6.5f, 6.5f);
+            vandaleriaText.Color = Color.White;
+            vandaleriaText.Size = vandaleriaText.Sprite.Rect;
+            vandaleriaText.zIndex = 2;
 
             startLabel = new LinkLabel();
             startLabel.Name = "PressStartButton";
-            startLabel.Position = new Vector2(350, 600);//_viewportWidth / 2.0f, _viewportHeight / 1.5f);
+            startLabel.Position = new Vector2(_viewportWidth / 5.3f, _viewportHeight / 1.8f);
             startLabel.Sprite = pressStartStatic;
             startLabel.Color = Color.White;
-            startLabel.Size = startLabel.Rect;
-            startLabel.ScaleFactor = new Vector2(3, 2);
+            startLabel.Size = startLabel.Sprite.Rect;
+            startLabel.Sprite.ScaleFactor = new Vector2(6, 6);
             startLabel.TabStop = true;
             startLabel.HasFocus = true;
+            startLabel.zIndex = 1;
 
-            controls.Add(startLabel);
+            //controls.Add(startLabel);
             //controls.Add(logoAndText);
 
             AddGameObject(bgImage);
+            AddGameObject(ouroborosText);
+            AddGameObject(logoPicture);
             AddGameObject(startLabel);
-            //AddGameObject(logoAndText);
+            AddGameObject(vandaleriaText);
         }
 
         public override void UpdateGameState(GameTime gameTime)
@@ -98,7 +130,7 @@ namespace OuroborosVandaleriaCore.Screen
 
         protected override void SetInputManager()
         {
-            InputManager = new InputManager(new TitleInputMapper());
+            InputManager = new InputManager(new MenuInputMapper());
         }
 
         public override void Render(SpriteBatch spriteBatch)

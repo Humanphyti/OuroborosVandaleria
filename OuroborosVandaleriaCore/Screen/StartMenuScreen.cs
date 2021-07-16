@@ -6,31 +6,123 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
+
 using OuroborosVandaleriaCore.Engine.GameState;
 using OuroborosVandaleriaCore.Engine;
 using OuroborosVandaleriaCore.Engine.Sprite;
 using OuroborosVandaleriaCore.Engine.UI;
+using OuroborosVandaleriaCore.GameObjects;
+using OuroborosVandaleriaCore.Engine.Input;
 
 namespace OuroborosVandaleriaCore.Screen
 {
     public class StartMenuScreen : BaseGameState
     {
-        PictureBox backgroundImage;
+        private const string BackgroundImage = "TitleScreen/SPR_titlescreen_bg";
+        private const string OuroborosText = "TitleScreen/SPR_titlescreen_ouroboros";
+        private const string VandaleriaText = "TitleScreen/SPR_titlescreen_vandaleria";
+        private const string OvLogo = "TitleScreen/SPR_titlescreen_logo";
+        private const string Options = "StartMenuScreen/spr_options";
+        private const string StartGame = "StartMenuScreen/spr_play_demo";
+
+        Sprite _backgroundImage;
+        Sprite _ouroborosText;
+        Sprite _vandaleriaText;
+        Sprite _ovLogo;
+        Sprite _options;
+        Sprite _startGame;
+
+        BackgroundImage backgroundImage;
         PictureBox ouroborosText;
         PictureBox vandaleriaText;
-        LinkLabel startGame;
-        Sprite startGamePrompt;
+        PictureBox ovLogo;
         LinkLabel options;
-        Sprite optionsPrompt;
-        float maxItemWidth = 0f;
+        LinkLabel startGame;
+
+        public override void HandleInput(GameTime gameTime)
+        {
+            InputManager.GetCommands(cmd =>
+            {
+                switch (cmd)
+                {
+                    case MenuInputCommand.ItemSelect:
+                        NotifyEvent(new MenuStateEvent.ItemSelected());                        
+                        break;
+                }
+            });
+        }
 
         //Constructor
-        public StartMenuScreen()
-        {
-        }
 
         public override void LoadContent()
         {
+            _backgroundImage = new Sprite(LoadTexture(BackgroundImage));
+            _ouroborosText = new Sprite(LoadTexture(OuroborosText));
+            _vandaleriaText = new Sprite(LoadTexture(VandaleriaText));
+            _ovLogo = new Sprite(LoadTexture(OvLogo));
+            _options = new Sprite(LoadTexture(Options));
+            _startGame = new Sprite(LoadTexture(StartGame));
+
+            backgroundImage = new BackgroundImage();
+            backgroundImage.Position = new Vector2(0, 0);
+            backgroundImage.Sprite = _backgroundImage;
+            backgroundImage.Sprite.ScaleFactor = new Vector2(6, 6);
+            backgroundImage.zIndex = 0;
+
+            ovLogo = new PictureBox();
+            ovLogo.Position = new Vector2(_viewportWidth / 3, _viewportHeight / 7);
+            ovLogo.Sprite = _ovLogo;
+            ovLogo.Sprite.ScaleFactor = new Vector2(3, 3);
+            ovLogo.Color = Color.White;
+            ovLogo.Size = ovLogo.Sprite.Rect;
+            ovLogo.zIndex = 1;
+
+            ouroborosText = new PictureBox();
+            ouroborosText.Position = new Vector2(_viewportWidth / 3, _viewportHeight / 7);
+            ouroborosText.Sprite = _ouroborosText;
+            ouroborosText.Sprite.ScaleFactor = new Vector2(3, 3);
+            ouroborosText.Color = Color.White;
+            ouroborosText.Size = ouroborosText.Sprite.Rect;
+            ouroborosText.zIndex = 1;
+
+            vandaleriaText = new PictureBox();
+            vandaleriaText.Position = new Vector2(_viewportWidth / 3, _viewportHeight / 7);
+            vandaleriaText.Sprite = _vandaleriaText;
+            vandaleriaText.Sprite.ScaleFactor = new Vector2(3, 3);
+            vandaleriaText.Color = Color.White;
+            vandaleriaText.Size = vandaleriaText.Sprite.Rect;
+            vandaleriaText.zIndex = 1;
+
+            options = new LinkLabel();
+            options.Name = "Options";
+            options.Position = new Vector2(_viewportWidth / 3, _viewportHeight / 4);
+            options.Sprite = _options;
+            options.Sprite.ScaleFactor = new Vector2(3, 3);
+            options.Color = Color.White;
+            options.Size = options.Sprite.Rect;
+            options.zIndex = 2;
+
+            startGame = new LinkLabel();
+            startGame.Name = "StartGame";
+            startGame.Position = new Vector2(_viewportWidth / 3, _viewportHeight / 5);
+            startGame.Sprite = _startGame;
+            startGame.Sprite.ScaleFactor = new Vector2(3, 3);
+            startGame.Color = Color.White;
+            startGame.Size = startGame.Sprite.Rect;
+            startGame.Selected += Item_Selected;
+            startGame.zIndex = 2;
+
+            AddGameObject(backgroundImage);
+            AddGameObject(ovLogo);
+            AddGameObject(ouroborosText);
+            AddGameObject(vandaleriaText);
+            AddGameObject(startGame);
+            AddGameObject(options);
+
+            ControlManager.Add(startGame);
+            ControlManager.Add(options);
+
+
             /*backgroundImage = new PictureBox(Content.Load<Texture2D>(@"TitleScreen/SPR_titlescreen_bg"), GameRef.ScreenRectangle);
             
 
@@ -102,8 +194,9 @@ namespace OuroborosVandaleriaCore.Screen
             }*/
         }
 
-        public override void HandleInput(GameTime gameTime)
+        private void ItemSelected()
         {
+
         }
 
         public override void UpdateGameState(GameTime gameTime)
@@ -113,7 +206,7 @@ namespace OuroborosVandaleriaCore.Screen
 
         protected override void SetInputManager()
         {
-            
+            InputManager = new InputManager(new MenuInputMapper());
         }
     }
 }

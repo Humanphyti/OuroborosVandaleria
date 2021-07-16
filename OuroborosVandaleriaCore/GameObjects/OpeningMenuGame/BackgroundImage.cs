@@ -11,9 +11,9 @@ namespace OuroborosVandaleriaCore.GameObjects
 {
     public class BackgroundImage : BaseGameObject
     {
-        public BackgroundImage(Sprite sprite)
+        public BackgroundImage()
         {
-            _texture = sprite.Texture;
+            Position = Vector2.Zero;
         }
     }
 }

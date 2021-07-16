@@ -8,9 +8,6 @@ namespace OuroborosVandaleriaCore.Engine.GameState
     {
         public class GameQuit : BaseGameStateEvent { }
 
-        public class GamePause : BaseGameStateEvent
-        {
-            
-        }
+        public class GamePause : BaseGameStateEvent{ }
     }
 }

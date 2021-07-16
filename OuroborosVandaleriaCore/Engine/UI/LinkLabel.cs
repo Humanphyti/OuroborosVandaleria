@@ -34,9 +34,9 @@ namespace OuroborosVandaleriaCore.Engine.UI
         public override void Render(SpriteBatch spriteBatch)
         {
             if (hasFocus)
-                spriteBatch.Draw(Sprite.Texture, Position, null, selectedColor, 0.0f, Origin, ScaleFactor, SpriteEffects.None, 0f);
+                spriteBatch.Draw(Sprite.Texture, Position, null, selectedColor, 0.0f, sprite.Origin, sprite.ScaleFactor, SpriteEffects.None, 0f);
             else
-                spriteBatch.Draw(Sprite.Texture, Position, null, Color, 0.0f, Origin, ScaleFactor, SpriteEffects.None, 0f);
+                spriteBatch.Draw(Sprite.Texture, Position, null, Color, 0.0f, sprite.Origin, sprite.ScaleFactor, SpriteEffects.None, 0f);
         }
 
         public override void HandleInput(PlayerIndex playerIndex)

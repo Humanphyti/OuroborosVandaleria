@@ -38,6 +38,7 @@ namespace OuroborosVandaleriaGame
             Content.RootDirectory = "Content";
             _graphics = new GraphicsDeviceManager(this);
 
+
             _firstGameState = firstGameState;
             _DesignedResolutionWidth = width;
             _DesignedResolutioHeight = height;
@@ -103,7 +104,7 @@ namespace OuroborosVandaleriaGame
             _graphics.ApplyChanges();
 
             _renderTarget = new RenderTarget2D(_graphics.GraphicsDevice, _DesignedResolutionWidth, _DesignedResolutioHeight, false, SurfaceFormat.Color, DepthFormat.None, 0, RenderTargetUsage.DiscardContents);
-            _renderScaleRectangle = GetScaleRectangle();
+            //_renderScaleRectangle = GetScaleRectangle();
 
             base.Initialize();
         }
@@ -166,10 +167,10 @@ namespace OuroborosVandaleriaGame
             _spriteBatch.End();
 
             _graphics.GraphicsDevice.SetRenderTarget(null);
-            _graphics.GraphicsDevice.Clear(ClearOptions.Target, Color.Black, 1.0f, 0);
+            //_graphics.GraphicsDevice.Clear(ClearOptions.Target, Color.Black, 1.0f, 0);
 
             _spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.Opaque);
-            _spriteBatch.Draw(_renderTarget, _renderScaleRectangle, Color.White);
+            _spriteBatch.Draw(_renderTarget, Vector2.Zero, Color.White);
             _spriteBatch.End();
 
             base.Draw(gameTime);

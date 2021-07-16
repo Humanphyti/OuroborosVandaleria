@@ -63,7 +63,7 @@ namespace OuroborosVandaleriaCore.GameObjects.OpeningMenuGame
                 }
             }
 
-            spriteBatch.Draw(_texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(_sprite.Texture, destinationRectangle, sourceRectangle, Color.White);
         }
 
     }

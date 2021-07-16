@@ -15,8 +15,8 @@ namespace OuroborosVandaleriaCore.GameObjects
 
         public override Vector2 Position
         {
-            get { return position; }
-            set { position = value; }
+            get { return _position; }
+            set { _position = value; }
         }
 
         public override void Render(SpriteBatch spriteBatch)
